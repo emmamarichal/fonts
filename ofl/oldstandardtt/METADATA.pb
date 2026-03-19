@@ -36,5 +36,8 @@ subsets: "latin"
 subsets: "latin-ext"
 subsets: "menu"
 subsets: "vietnamese"
+source {
+  repository_url: "https://git.sr.ht/~ralessi/oldstandard"
+}
 stroke: "SERIF"
 classifications: "DISPLAY"
