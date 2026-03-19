@@ -1,15 +1,15 @@
 # Old Standard TT — Source Metadata Investigation
 
 **Model**: Claude Opus 4.6
-**Date**: 2026-03-12
+**Date**: 2026-03-19 (updated)
 
 ## Summary
 
-A canonical upstream repository was found at `akryukov/oldstand` on GitHub, owned by the designer Alexey Kryukov. However, the repository contains only SFD (FontForge) sources — no UFO or Glyphs format sources. Per policy, METADATA.pb was not updated because UFO/Glyphs sources are required for a source block addition.
+The upstream repository was updated to point to the actively maintained SourceHut fork at `https://git.sr.ht/~ralessi/oldstandard`, maintained by Robert Alessi. This replaces the dormant GitHub repository `akryukov/oldstand` (last updated 2017). The SourceHut fork has continued development through v2.7a with additional weights (Bold Italic) and a Math font variant. Sources remain SFD-only (no gftools-builder pipeline possible).
 
 ## Family Details
 
-- **Designer**: Alexey Kryukov
+- **Designer**: Alexey Kryukov (original), Robert Alessi & Antonis Tsolomitis (current maintainers)
 - **License**: OFL
 - **Category**: SERIF
 - **Google Fonts date added**: 2010-05-18
@@ -17,36 +17,40 @@ A canonical upstream repository was found at `akryukov/oldstand` on GitHub, owne
 
 ## Upstream Repository
 
+- **Active URL**: https://git.sr.ht/~ralessi/oldstandard (SourceHut)
+- **Maintainer**: Robert Alessi (alessi@robertalessi.net)
+- **Co-maintainer**: Antonis Tsolomitis (atsol@aegean.gr)
+- **Latest release**: v2.7a
+- **Bug tracker**: https://todo.sr.ht/~ralessi/oldstandard
+
+### Previous Repository (dormant)
+
 - **URL**: https://github.com/akryukov/oldstand
-- **Owner**: `akryukov` — Alexey Kryukov (confirmed via profile showing affiliation with Moscow State University and other font projects including Theano Classical Fonts)
-- **Description**: "Old Standard font family"
+- **Owner**: Alexey Kryukov (original designer)
 - **Last pushed**: 2017-03-31
+- **Status**: Dormant since 2013; the SourceHut fork continues active development
 
-The repository contains FontForge SFD sources:
-- `OldStandard-Regular.sfd`
-- `OldStandard-Italic.sfd`
-- `OldStandard-Bold.sfd`
-- `OldStandard.cfg` — a CacheTT configuration file
-- `genfonts.sh` — build script
-- `ost-generate.py` — Python generation script
-- GDL (Graphite Description Language) files for each weight
-- A `manual/` directory with source documentation
+## Source Files (SourceHut repo)
 
-## Commits
+The `src/` directory contains FontForge SFD sources:
+- `OldStandard-Regular.sfd` (2.0 MiB)
+- `OldStandard-Italic.sfd` (1.8 MiB)
+- `OldStandard-Bold.sfd` (1.7 MiB)
+- `OldStandard-BoldItalic.sfd` (2.2 MiB) — not in Google Fonts
+- `OldStandard-Math.sfd` (7.6 MiB) — not in Google Fonts
 
-The repository was last updated in August 2013. Three commits were found:
-- `f379c2c4` (2013-08-12): "A cfg filr for cachett"
-- `80f7b552` (2013-08-12): "Old Standard manual sources"
-- `6ab74e04` (2013-08-12): "pushing main font files"
+Build is driven by a `makefile` at the repo root.
 
-## Cached Upstream Repos
+## Actions Taken
 
-No cached clone was found in `/mnt/shared/upstream_repos/fontc_crater_cache/` for this family.
+- METADATA.pb `source.repository_url` was set to the SourceHut repo URL
+- No commit hash was recorded (SFD sources cannot go through gftools-builder)
+- No config.yaml was created (no modern build pipeline possible)
 
 ## Conclusion
 
-A canonical designer-owned repository exists at `akryukov/oldstand`. The sources are in FontForge SFD format only — no UFO or Glyphs sources are available. No METADATA.pb changes were made, as the policy requires UFO or Glyphs sources to justify a source block addition.
+The SourceHut fork is the actively maintained upstream. It contains expanded glyph coverage and additional weights beyond what Google Fonts currently ships. Sources are SFD-only, so reproducible builds via gftools-builder are not possible.
 
 ## Confidence
 
-**High** — The repository is owned by Alexey Kryukov (`akryukov`), whose email `amkryukov@gmail.com` matches the copyright string exactly. The font files in the repository match the names used in the Google Fonts release.
+**High** — Robert Alessi's fork is clearly a continuation of the original project, with proper attribution and OFL licensing. The SourceHut bug tracker is active.
