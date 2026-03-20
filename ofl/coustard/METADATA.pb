@@ -10,7 +10,7 @@ fonts {
   filename: "Coustard-Regular.ttf"
   post_script_name: "Coustard-Regular"
   full_name: "Coustard Regular"
-  copyright: "Copyright 2011 Vernon Adams (vern@newtypography.co.uk)"
+  copyright: "Copyright 2011 The Coustard Project Authors (https://github.com/googlefonts/bangers)"
 }
 fonts {
   name: "Coustard"
@@ -19,11 +19,25 @@ fonts {
   filename: "Coustard-Black.ttf"
   post_script_name: "Coustard-Black"
   full_name: "Coustard Black"
-  copyright: "Copyright 2011 Vernon Adams (vern@newtypography.co.uk)"
+  copyright: "Copyright 2011 The Coustard Project Authors (https://github.com/googlefonts/bangers)"
 }
 subsets: "latin"
+subsets: "latin-ext"
 subsets: "menu"
 source {
-  repository_url: "https://github.com/vernnobile/coustardFont"
-  commit: "5f54d232ff52d0d43bad509357f03c5ddbdf51fc"
+  repository_url: "https://github.com/googlefonts/coustardFont"
+  commit: "84d4ef2fbb8e87ba843d49308b98eeb4a874be91"
+  files {
+    source_file: "fonts/ttf/Coustard-Regular.ttf"
+    dest_file: "Coustard-Regular.ttf"
+  }
+  files {
+    source_file: "fonts/ttf/Coustard-Black.ttf"
+    dest_file: "Coustard-Black.ttf"
+  }
+  files {
+    source_file: "OFL.txt"
+    dest_file: "OFL.txt"
+  }
+  branch: "master"
 }
