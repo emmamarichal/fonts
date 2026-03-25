@@ -3,9 +3,27 @@
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-12
 
-## Summary
+## Source Repository
 
-No canonical upstream GitHub repository was found for Patua One. The designer, LatinoType Limitada (info@latinotype.com), has no discoverable public GitHub repository for this font. Web searches and GitHub API searches returned no upstream repository for Patua One. There is no FONTLOG.txt in the google/fonts directory for this family.
+| Field | Value |
+|-------|-------|
+| **Repository** | [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) |
+| **Commit** | `52f780bc9d197280a9f430574e179a5f233c56b6` |
+| **Source path** | `ofl/patuaone/src/` |
+| **Buildable** | No — legacy formats only (.vfb/.sfd) |
+
+The font sources are in the **googlefontdirectory-hg** monorepo, a git mirror of the
+original Google Code Mercurial repository (`code.google.com/p/googlefontdirectory`)
+that was the canonical host for Google Fonts from 2010 to 2013.
+
+### Source files
+
+- **.vfb** (FontLab, proprietary): PatuaOne-Regular-OTF.vfb
+- **.sfd** (FontForge): PatuaOne-Regular-TTF.sfd
+- **Compiled binary** (not a design source): PatuaOne-Regular.otf
+- **Metadata**: METADATA_comments.txt
+
+The design sources are VFB (FontLab, proprietary) and SFD (FontForge) format files. Neither format is buildable with gftools-builder. No modern buildable sources (.glyphs, .ufo, .designspace) are available.
 
 ## Investigation
 
@@ -19,4 +37,4 @@ Web searches were conducted for a LatinoType GitHub organization, for "latinotyp
 
 ## Conclusion
 
-No canonical upstream repository was found. LatinoType does not appear to maintain a public GitHub repository for Patua One. No METADATA.pb changes were made.
+No canonical upstream repository was found beyond the legacy googlefontdirectory-hg archive. LatinoType does not appear to maintain a public GitHub repository for Patua One. Sources exist as VFB/SFD files, which are not buildable with gftools-builder. No METADATA.pb changes were made.
