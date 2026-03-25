@@ -3,15 +3,30 @@
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-12
 
-## Summary
+## Source Repository
 
-No canonical upstream repository with UFO or Glyphs sources was found for the Sansita One font family. The font was designed by Omnibus-Type and added to Google Fonts in 2011. While Omnibus-Type maintains the later Sansita family at `Omnibus-Type/Sansita`, no separate repository for Sansita One was found.
+The `googlefontdirectory-hg` monorepo (the historical Google Font Directory Mercurial archive) contains files for this family.
+
+- **Repository**: `googlefontdirectory-hg`
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `sansitaone/src/`
+
+## Source Files
+
+The `sansitaone/src/` directory contains design sources in VFB (FontLab) and SFD (FontForge) formats, neither of which can be built with gftools-builder:
+
+- **VFB** (FontLab, proprietary format, not buildable with gftools): SansitaOne-TTF.vfb
+- **SFD** (FontForge, not buildable with gftools-builder): SansitaOne-TTF.sfd
+
+## Buildability
+
+Not buildable with gftools-builder. The sources are in VFB (FontLab proprietary) and SFD (FontForge) formats. Neither format is supported by gftools-builder. Conversion to UFO or Glyphs format would be required.
 
 ## Designer
 
 - **Designer**: Omnibus-Type (omnibus.type@gmail.com / www.omnibus-type.com)
 
-## Investigation
+## Investigation Details
 
 The following searches and checks were performed:
 
@@ -22,7 +37,3 @@ The following searches and checks were performed:
 - Listed all `Omnibus-Type` user repositories — no SansitaOne repository present
 
 The `Omnibus-Type` user repositories included a `Sansita` repo (for the 2016 family) and a `Sansita-Swashed` repo, but no dedicated Sansita One repository. Sansita One is an earlier, distinct display font from 2011.
-
-## Result
-
-No source block was added to METADATA.pb. The font appears to have been contributed to Google Fonts without a public source repository, or the sources may have been lost or not published.
