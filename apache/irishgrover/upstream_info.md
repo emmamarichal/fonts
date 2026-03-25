@@ -1,45 +1,62 @@
-# Investigation: Irish Grover
+# Investigation Report: Irish Grover
 
-## Summary
+## Source Repository
 
 | Field | Value |
 |-------|-------|
-| Family Name | Irish Grover |
-| Slug | irish-grover |
-| License Dir | apache |
-| Repository URL | unknown |
-| Commit Hash | unknown |
-| Config YAML | unknown |
-| Status | missing_url |
-| Confidence | LOW |
+| **Repository** | [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) |
+| **Commit** | `52f780bc9d197280a9f430574e179a5f233c56b6` |
+| **Source path** | `irishgrover/src/` |
+| **Buildable** | No — VFB is proprietary, not compatible with gftools-builder |
 
-## Source Data (METADATA.pb)
+The googlefontdirectory-hg monorepo (a git mirror of the original Google Code Mercurial repository) contains the following source files under `irishgrover/src/`:
 
-```
-No source block
-```
+- `IrishGrover.vfb` — FontLab VFB format (proprietary, not buildable with gftools-builder)
+- `METADATA_comments.txt` — metadata only, not a source file
 
-## Investigation
+The VFB file is the original design source, but FontLab's .vfb format is proprietary and cannot be used with gftools-builder. Converting to a modern format (.glyphs or .ufo) would require FontLab or a conversion tool, and the result would need verification.
 
-The font is stored under `apache/irishgrover/` with an Apache 2.0 license. The METADATA.pb has no `source` block at all.
+## Key Findings
 
-The font history in google/fonts shows:
-- `90abd17b4` — "Initial commit" — the font was present from the very beginning of the google/fonts repository
-- `daa6505c6` — "hotfix-irishgrover: v1.001 added (#777)" — a hotfix that renamed the file from `IrishGrover.ttf` to `IrishGrover-Regular.ttf`
+| Field              | Value |
+|--------------------|-------|
+| Family Name        | Irish Grover |
+| Designer           | Sideshow (Font Diner, Inc) |
+| License            | Apache 2.0 |
+| Category           | DISPLAY |
+| Date Added         | 2011-01-06 |
+| Source Types        | VFB (FontLab, proprietary format) |
+| Status             | no_config_possible |
+| Confidence         | HIGH |
 
-The copyright in METADATA.pb states: "Copyright (c) 2010 by Font Diner, Inc DBA Sideshow. All rights reserved."
+## Investigation Details
 
-The DESCRIPTION.en_us.html says:
-> "Presenting Irish Grover! No, it's not a coveted new AKC breed. No, it's not a tasty seasonal pilsner. It's a fun, flamboyant, new display font by Squid that's way better than any of those possibilities. Sure and it's free for Pete's sake! And you can't say that about dogs or beer."
+### Current State in google/fonts
 
-The designer is listed as "Sideshow" (Font Diner, Inc DBA Sideshow). Font Diner is a commercial type foundry; this font was donated to Google Fonts under Apache license. No GitHub repository has been identified for the upstream source. The font dates to 2010 and was contributed directly to Google Fonts without a tracked upstream repository.
+- **Directory**: `apache/irishgrover/`
+- **No source block** in METADATA.pb
+- **Copyright**: "Copyright (c) 2010 by Font Diner, Inc DBA Sideshow. All rights reserved."
 
-No cached upstream repository was found in `upstream_repos/fontc_crater_cache/` for this family.
+### Git History in google/fonts
 
-Given the Apache license and the vintage of the font (2010), it is likely that there is no open-source upstream repository. The font was contributed directly to Google Fonts by Font Diner/Sideshow.
+| Commit | Date | Author | Description |
+|--------|------|--------|-------------|
+| 90abd17b4 | 2015-03-07 | Dave Crossland | Initial commit |
+| daa6505c6 | 2017 | Marc Foley | hotfix-irishgrover: v1.001 added (#777) |
+
+The hotfix renamed `IrishGrover.ttf` to `IrishGrover-Regular.ttf`.
+
+### Designer Context
+
+Font Diner (DBA Sideshow) is a commercial type foundry. The DESCRIPTION.en_us.html describes Irish Grover as "a fun, flamboyant, new display font by Squid." The font was donated to Google Fonts under the Apache license.
+
+### Search for Upstream Repository
+
+No cached upstream repository was found in `upstream_repos/fontc_crater_cache/` for this family. No googlefonts/irishgrover or fontdiner repository with source files exists. The font was contributed directly to Google Fonts without a tracked upstream repository.
 
 ## Conclusion
 
-No upstream repository is known for this font. The font was contributed directly to google/fonts under Apache 2.0 license by Font Diner Inc / Sideshow. Investigation into Font Diner's website or archives may reveal source files, but there is likely no publicly accessible upstream repository. This font may be a case where `no_config_possible` applies due to the commercial foundry origin and lack of open source repository.
+While the googlefontdirectory-hg monorepo preserves the original VFB design source, this proprietary format is not compatible with gftools-builder. No modern buildable sources (.glyphs, .ufo, .designspace) exist, so no config.yaml can be created without first converting the VFB to a supported format.
 
-Action needed: Determine if Font Diner/Sideshow has a public source repository or if this font was contributed as binaries only. If no upstream repo exists, document as `missing_url` with a note that no upstream repository was found.
+### Status: no_config_possible
+### Confidence: HIGH
