@@ -3,37 +3,48 @@
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-12
 
-## Repository
+## Source Repository
 
-- **URL**: https://github.com/librefonts/nosifer
-- **Status**: Mirror/archive repository; no authoritative upstream from the original designer (Vernon Adams / Typomondo) has been found on GitHub. The designer has no active GitHub presence under known usernames (vernonadams, typomondo).
-- **Default branch**: master
-- **Latest commit**: `ffe4d8c7fee1470f2e5d2fb5008f00db6bc67ed1` — "update .travis.yml" (2014-10-17)
-- **Note on nosifercaps**: Nosifer and Nosifer Caps are separate librefonts repos (`librefonts/nosifer` and `librefonts/nosifercaps`) but share the same designer (Vernon Adams / Typomondo) and the same copyright notice. Both use Version 001.002.
+- **Repository**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) (Mercurial monorepo, pre-GitHub era)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `ofl/nosifer/src/`
+- **Buildable**: No — legacy formats only (.sfd)
 
-## Source Files
+The font sources are in the **googlefontdirectory-hg** monorepo, a git mirror of the
+original Google Code Mercurial repository (`code.google.com/p/googlefontdirectory`)
+that was the canonical host for Google Fonts from 2010 to 2013.
 
-The `src/` directory of `librefonts/nosifer` contains:
+### Source Files
 
-- `Nosifer-Regular.sfd` — FontForge source (original outlines)
-- `Nosifer-Regular-TTF.sfd` — FontForge source (TrueType-specific outlines)
-- `VERSIONS.txt` — records `Nosifer-Regular.ttf: Version 001.002`
-- `METADATA_comments.txt` — historical subsetting/build script comments
+| File | Type |
+|------|------|
+| `Nosifer-Regular.sfd` | FontForge SFD source, original outlines (not buildable with gftools-builder) |
+| `Nosifer-Regular-TTF.sfd` | FontForge SFD source, TrueType-specific outlines (not buildable with gftools-builder) |
+| `METADATA_comments.txt` | Metadata comments (not a source file) |
 
-The root-level TTX files (e.g., `Nosifer-Regular.ttf._g_l_y_f.ttx`) are deconstructed table dumps corresponding to the distributed binary, not a canonical build artifact.
+Two SFD files are present — one with original outlines and one with TrueType-specific outlines. Both are FontForge format, not compatible with gftools-builder.
+
+## Designer and Provenance
+
+- **Designer**: Vernon Adams (Typomondo)
+- Vernon Adams passed away in 2014. His fonts were transferred to the Google Fonts collection but no living maintainer is known.
+- No authoritative upstream from the original designer has been found on GitHub (no active presence under usernames vernonadams, typomondo).
+- **Relationship to Nosifer Caps**: Nosifer and Nosifer Caps are separate families sharing the same designer, copyright notice (`Copyright (c) 2011, Typomondo`), and version (001.002).
+
+## Additional Mirror
+
+A third-party mirror exists at https://github.com/librefonts/nosifer (latest commit `ffe4d8c` on 2014-10-17, "update .travis.yml"). It contains the same SFD sources plus TTX table dumps. The `src/VERSIONS.txt` records version 001.002, matching the Google Fonts binary.
 
 ## Build System
 
-No build system is present. The librefonts repo is a 2014-era archive snapshot. The original production workflow used the legacy `googlefontdirectory` toolchain (font-optimizer + subset.py scripts), as evidenced by `METADATA_comments.txt`. No Makefile, Python build scripts, or `gftools` configuration exists.
+Not applicable — the SFD sources require FontForge. The original production workflow used the legacy `googlefontdirectory` toolchain (font-optimizer + subset.py scripts).
 
-## config.yaml Status
+## config.yaml
 
-No `config.yaml` exists in `/mnt/shared/google/fonts/ofl/nosifer/`. None is present in the upstream repo either.
+Does not exist. Cannot be created — no gftools-builder compatible sources available.
 
 ## Notes
 
-- Vernon Adams passed away in 2014. His fonts were transferred to the Google Fonts collection but no living maintainer is known to manage the upstream source.
-- The font binary in the google/fonts repo (`Nosifer-Regular.ttf`, Version 001.002) matches the version recorded in `librefonts/nosifer/src/VERSIONS.txt`, confirming this is the same release.
-- The librefonts organization appears to have been a Google Fonts-affiliated archiving effort (circa 2014) and does not represent active development.
-- For future maintenance, the SFD sources in `librefonts/nosifer/src/` are the best available upstream, but they would require significant QA work (FontForge conversion, hinting review) to produce an updated binary.
-- A potential canonical source might exist in the old Google Fonts Directory (pre-GitHub migration), but no public access exists to confirm.
+- The font binary in google/fonts (`Nosifer-Regular.ttf`, Version 001.002) matches the version in the librefonts mirror's `VERSIONS.txt`.
+- The `librefonts` organization appears to have been a Google Fonts-affiliated archiving effort circa 2014 and does not represent active development.
+- For future maintenance, the SFD sources are the best available upstream, but would require FontForge conversion and significant QA work to produce updated binaries.
