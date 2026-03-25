@@ -1,13 +1,26 @@
-# Spirax — Upstream Investigation
+# Spirax -- Upstream Source Investigation
 
 **Model**: Claude Opus 4.6
-**Date**: 2026-03-12
-**Investigator**: AI agent (Claude) under guidance of @felipesanches
 
-## Summary
+## Source Repository
 
-No canonical upstream repository with UFO or Glyphs source files was found for
-Spirax.
+Design sources were found in the **googlefontdirectory-hg** archive (Google Font Directory, Mercurial-era).
+
+- **Repository**: googlefontdirectory-hg
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `spirax/src/`
+
+## Source Files
+
+The source directory contains: 1 VFB file (FontLab, proprietary format); 1 SFD file (FontForge format); 1 compiled binary (OTF/TTF, not design sources).
+
+Neither VFB (FontLab, proprietary) nor SFD (FontForge) formats are supported by gftools-builder. These sources are **not directly buildable** with the current open-source pipeline.
+
+### Key source files
+
+- `Spirax-Regular.vfb` (VFB, proprietary)
+- `Spirax-Regular-TTF.sfd` (SFD, FontForge)
+- `Spirax-Regular.otf` (compiled binary)
 
 ## Research
 
@@ -18,10 +31,6 @@ Brenda Gallo, Gustavo Dipre, or others for the Spirax typeface returned no
 results. The font is only available in compiled TTF form with no open source
 files found in any public repository.
 
-## Decision
-
-No `source` block was added to `METADATA.pb`. No publicly accessible source
-repository was found.
 
 ## Notes
 
