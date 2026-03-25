@@ -1,14 +1,27 @@
-# Loved by the King — Source Investigation
+# Loved by the King - Source Investigation
 
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-03
-**Status**: incomplete
+**Confidence**: HIGH
 
-## METADATA.pb Source Block (current)
+## Source Repository
+
+The original design sources for Loved by the King are preserved in the **googlefontdirectory-hg** Mercurial monorepo at commit `52f780bc9d197280a9f430574e179a5f233c56b6`, under the path `lovedbytheking/src/`.
+
+### Source Files in googlefontdirectory-hg
+
+- `LovedbytheKing-TTF.sfd` -- FontForge SFD file (legacy, not buildable with gftools-builder)
+- `LovedbytheKing.vfb` -- FontLab binary source (proprietary, not buildable with gftools-builder)
+- `LovedbytheKing.otf` -- compiled OTF binary, not a design source
+- `METADATA_comments.txt` -- metadata file, not a design source
+
+The design sources are in SFD and VFB legacy formats only. No `.glyphs`, `.ufo`, or `.designspace` files are present. These formats are not compatible with gftools-builder.
+
+## METADATA.pb Analysis
 
 No source block exists. The current METADATA.pb contains only basic font metadata (name, designer, license, category, fonts, subsets, classifications) with no `source { }` block.
 
-## Repository Analysis
+## Upstream Repository (librefonts archive)
 
 The only upstream repository found is **librefonts/lovedbytheking** on GitHub (`https://github.com/librefonts/lovedbytheking`).
 
@@ -17,25 +30,8 @@ The only upstream repository found is **librefonts/lovedbytheking** on GitHub (`
 - **Last pushed**: 2014-10-17
 - **Commits**: Single commit (`d22be35`) by `hash3g` dated 2014-10-17, titled "update .travis.yml"
 - **Branches**: Only `master`
-- **Status**: Clean, synced with origin
 
-### Repository Contents
-
-The repo contains:
-- **Root**: Decomposed TTX files of `LovedbytheKing.ttf` (each table in a separate `.ttx` file), `METADATA.json`, `OFL.txt`, `DESCRIPTION.en_us.html`, `.travis.yml`
-- **`src/`**: `LovedbytheKing-TTF.sfd` (FontForge Spline Font Database v3.0), `LovedbytheKing.vfb` (FontLab binary), decomposed OTF TTX files, `METADATA_comments.txt`, `VERSIONS.txt`
-
-### Source File Analysis
-
-- **SFD file**: FontForge Spline Font Database format (legacy). Not compatible with gftools-builder.
-- **VFB file**: FontLab Studio binary format (legacy, proprietary). Not compatible with gftools-builder.
-- **No `.glyphs`, `.glyphx`, `.ufo`, or `.designspace` files** exist in the repo.
-- **No `config.yaml`** exists in the repo.
-- The TTX files are decomposed binary font tables, not editable design sources.
-
-### Build Configuration (Travis CI)
-
-The `.travis.yml` used the legacy `fontbakery-build.py` tool (circa 2014), which predated the modern gftools-builder pipeline. This build system is no longer supported.
+The repo contains decomposed TTX files of `LovedbytheKing.ttf`, the same SFD/VFB sources as the googlefontdirectory-hg monorepo, `METADATA.json`, `OFL.txt`, `DESCRIPTION.en_us.html`, and `.travis.yml`.
 
 ## Onboarding History
 
@@ -58,21 +54,7 @@ Kimberly Geswein is a prolific handwriting font designer with 22 font families i
 
 ## Build Configuration
 
-- **config.yaml**: Does not exist in the upstream repo
-- **gftools-builder compatible sources**: None. The repo contains only SFD (FontForge) and VFB (FontLab) files, which are legacy formats not supported by gftools-builder.
-- **Override config.yaml feasibility**: Not feasible. There are no `.glyphs`, `.ufo`, or `.designspace` sources from which gftools-builder could compile fonts.
-
-## Findings
-
-1. **No proper design sources exist**: The librefonts/lovedbytheking repo is an automated mirror containing decomposed TTX files and legacy SFD/VFB sources. These cannot be used with the modern gftools-builder pipeline.
-
-2. **The librefonts repo is the only known upstream**: No other repository (e.g., a designer-maintained repo) was found. The designer (Kimberly Geswein) does not have a GitHub presence.
-
-3. **Font has never been updated**: The binary in google/fonts dates from the initial bulk import (2015) and the font version is from 2006. It has never gone through the modern onboarding pipeline.
-
-4. **SFD-only sources**: The only usable source format is the FontForge SFD file. This is a legacy format that cannot be compiled via gftools-builder. A `config.yaml` override is not applicable here.
-
-5. **Pattern match**: Other Kimberly Geswein fonts (e.g., `architectsdaughter`) already reference `librefonts` repos in their source blocks with SFD-only sources, establishing a precedent for documenting these legacy repos.
+The source files are SFD (FontForge) and VFB (FontLab) formats only. These are not compatible with gftools-builder, which requires `.glyphs`, `.ufo`, or `.designspace` source formats. Creating an override `config.yaml` is not feasible.
 
 ## Recommended Source Block
 
@@ -83,9 +65,8 @@ source {
 }
 ```
 
-**Notes on the recommended block**:
-- The `repository_url` points to the librefonts mirror, which is the only known upstream repository.
-- The `commit` is `d22be35` — the single commit in the repository, which contains all the source files.
-- No `config_yaml` field is included because there is no config.yaml in the repo and no gftools-builder compatible sources exist to create an override for.
-- This follows the same pattern as `architectsdaughter` (another Kimberly Geswein font with a `librefonts` source block).
-- **Status**: incomplete — the font lacks modern design sources (.glyphs/.ufo/.designspace) needed for gftools-builder compilation. The source block documents what exists (SFD-only legacy sources) but the font cannot be rebuilt from these sources using the current toolchain.
+No `config_yaml` field is included because there is no config.yaml in the repo and no gftools-builder compatible sources exist. This follows the same pattern as other Kimberly Geswein fonts (e.g., `architectsdaughter`) that reference `librefonts` repos with legacy-only sources.
+
+## Conclusion
+
+The librefonts/lovedbytheking repository is an archival mirror, not the designer's original source. The font lacks modern design sources (.glyphs/.ufo/.designspace) needed for gftools-builder compilation. The source block documents what exists (SFD/VFB legacy sources) but the font cannot be rebuilt from these sources using the current toolchain.
