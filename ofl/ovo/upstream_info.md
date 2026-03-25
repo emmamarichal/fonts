@@ -5,32 +5,49 @@
 
 ## Summary
 
-Ovo is a medium-contrast serif font designed by Nicole Fally, mastered by Eben Sorkin of SorkinType. The FONTLOG credits Nicole Fally as the original designer (nf@t-g-d.at, www.t-g-d.at) and Eben Sorkin for spacing and mastering. It was added to Google Fonts on 2011-07-20.
+Ovo is a medium-contrast serif font designed by Nicole Fally, mastered by Eben Sorkin of SorkinType. The original design sources were found in the `googlefontdirectory-hg` monorepo in FontLab VFB and FontForge SFD formats, which are not buildable with gftools-builder. No canonical designer-owned GitHub repository was found, and the SorkinType GitHub organization does not contain an Ovo repository.
 
-## Designer
+## Source Repository
 
-Nicole Fally created the initial version (v1.000, July 2010) in FontLab VFB format. Eben Sorkin completed the mastering and TTF conversion (v1.002, July 2011). The copyright notice credits Sorkin Type Co (www.sorkintype.com).
+- **Repo**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) (historical Google Font Directory Mercurial monorepo)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `ovo/src/`
+- **Buildable**: No — legacy formats only (.vfb/.sfd)
 
-## Upstream Repository Search
+### Source Files
 
-The following searches were conducted:
+| File | Format | Notes |
+|------|--------|-------|
+| `Ovo-Regular.vfb` | FontLab VFB | Original source, proprietary binary |
+| `Ovo-Regular-TFF.sfd` | FontForge SFD | TrueType variant (note: filename has "TFF" typo) |
+| `Ovo-Regular.otf` | Compiled binary | Not a design source |
+
+The VFB file is the primary design source. No UFO or Glyphs sources are available.
+
+## Family Details
+
+- **Designer**: Nicole Fally (original design), Eben Sorkin (spacing and mastering)
+- **License**: OFL
+- **Google Fonts date added**: 2011-07-20
+- **Copyright**: Sorkin Type Co (www.sorkintype.com)
+
+Nicole Fally created the initial version (v1.000, July 2010) in FontLab VFB format. Eben Sorkin completed the mastering and TTF conversion (v1.002, July 2011). The FONTLOG credits Nicole Fally (nf@t-g-d.at, www.t-g-d.at) as the original designer.
+
+## Investigation Details
+
+### Designer Profiles
 
 - GitHub user search for "nicolefally": no account found
 - GitHub repository search for "ovo font": no relevant font repository found
-- GitHub repository search for "nicole fally font": no results
-- SorkinType GitHub organization (https://github.com/SorkinType): reviewed all 70+ repositories — no Ovo repository exists in the SorkinType organization
+- SorkinType GitHub organization (https://github.com/SorkinType): reviewed all 70+ repositories — no Ovo repository exists
 
-## librefonts/ovo Analysis
+### Librefonts Mirror
 
-The repository https://github.com/librefonts/ovo is a librefonts organization mirror. Its `src/` folder contains:
-- `Ovo-Regular.vfb` — FontLab VFB source file (proprietary binary format)
-- `Ovo-Regular-TFF.sfd` — FontForge SFD source file
-
-The FONTLOG confirms the original design was created in FontLab (VFB format). No UFO or Glyphs source files exist.
+The `librefonts/ovo` repository (https://github.com/librefonts/ovo) contains the same VFB and SFD source files as the googlefontdirectory-hg monorepo. The FONTLOG confirms the original design was created in FontLab (VFB format).
 
 ## Conclusion
 
-No canonical designer-owned upstream repository was found for Ovo. Neither Nicole Fally nor Eben Sorkin maintain a public GitHub repository for this font. The SorkinType GitHub organization, which hosts many other SorkinType fonts, does not include an Ovo repository. The only available source is the `librefonts/ovo` mirror, which contains VFB and SFD files only. No METADATA.pb source block was added.
+The original design sources for Ovo are preserved in the `googlefontdirectory-hg` monorepo as VFB and SFD files. These are legacy formats not buildable with gftools-builder. Neither Nicole Fally nor Eben Sorkin maintain a public GitHub repository for this font.
 
 ## References
 
