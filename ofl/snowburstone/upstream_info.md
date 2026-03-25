@@ -1,10 +1,27 @@
+# Snowburst One -- Upstream Source Investigation
+
 **Model**: Claude Opus 4.6
 
-# Snowburst One — Upstream Source Investigation
+## Source Repository
 
-## Summary
+Design sources were found in the **googlefontdirectory-hg** archive (Google Font Directory, Mercurial-era).
 
-Snowburst One is a display typeface designed by Annet Stirling, published by Sorkin Type Co (www.sorkintype.com, eben@eyebytes.com) and released in 2011–2012. It was added to Google Fonts on 2012-11-26.
+- **Repository**: googlefontdirectory-hg
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `snowburstone/src/`
+
+## Source Files
+
+The source directory contains: 1 VFB file (FontLab, proprietary format); 2 SFD files (FontForge format); 1 compiled binary (OTF/TTF, not design sources).
+
+Neither VFB (FontLab, proprietary) nor SFD (FontForge) formats are supported by gftools-builder. These sources are **not directly buildable** with the current open-source pipeline.
+
+### Key source files
+
+- `SnowburstOne-Regular.vfb` (VFB, proprietary)
+- `SnowburstOne-Regular_otf.sfd` (SFD, FontForge)
+- `SnowburstOne-Regular_ttf.sfd` (SFD, FontForge)
+- `SnowburstOne-Regular.otf` (compiled binary)
 
 ## Designer
 
@@ -18,11 +35,3 @@ A search for canonical upstream repositories was conducted on GitHub. Searches f
 - **google-fonts-bower/snowburstone-bower** — a deprecated bower packaging mirror.
 
 No repository owned by Sorkin Type Co or Annet Stirling containing UFO or Glyphs sources was found.
-
-## Status
-
-No canonical upstream repository with UFO or Glyphs sources was found. No source block was added.
-
-## Confidence
-
-Low — No public source repository was found for this typeface.
