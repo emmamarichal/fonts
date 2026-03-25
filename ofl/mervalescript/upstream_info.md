@@ -3,62 +3,58 @@
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-12
 
-## Summary
+## Source Repository
 
-Mervale Script is a single-weight handwriting/script typeface designed by Brian J. Bonislawsky and Jim Lyles for Astigmatic (AOETI), released in 2012. No official upstream source repository maintained by Astigmatic could be found. The only GitHub presence is a community mirror under the `librefonts` organization, which is not authoritative.
+The original design sources for Mervale Script are preserved in the **googlefontdirectory-hg** monorepo, a git mirror of the original Google Code Mercurial repository that was the canonical host for Google Fonts from 2010 to 2013.
 
-## Repository
+- **Repository**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `ofl/mervalescript/src/`
 
-| Field | Value |
-|-------|-------|
-| Official upstream | Not found |
-| Community mirror | https://github.com/librefonts/mervalescript |
-| Mirror type | Part of the `librefonts` organization (861 repos; community archive of free fonts, not maintained by Astigmatic) |
-| Latest commit (mirror) | `31648e2a8d9b3f059379bb37aebb50f0e0b9d465` (2014-10-17) |
-| Designer contact | astigma@astigmatic.com |
-| Designer website | www.astigmatic.com (SSL certificate expired — HTTPS unreachable as of investigation date) |
+### Source files
 
-The `librefonts/mervalescript` repo contains TTX-exploded font tables and the original `.vfb` source files, but it is a third-party mirror, not an authoritative Astigmatic repository. No GitHub organization or user account for "Astigmatic" or "Brian J. Bonislawsky" was found that hosts original font sources for this family.
+| File | Format | Buildable |
+|------|--------|-----------|
+| `MervaleScript-Regular.vfb` | FontLab VFB | No (proprietary) |
+| `MervaleScript-Regular-OTF.vfb` | FontLab VFB | No (proprietary) |
+| `MervaleScript-Regular-TTF.vfb` | FontLab VFB | No (proprietary) |
+| `MervaleScript-Regular.otf` | Compiled OTF binary | No (not a design source) |
+| `METADATA_comments.txt` | Metadata notes | N/A |
 
-The GitHub user at https://github.com/astigmatic (id 34247703, created 2017-12-04) has only 2 unrelated repositories (an Android test project and a placeholder README) and is not affiliated with the type foundry.
-
-## Source Files
-
-The `.vfb` (FontLab Studio) source files are present in the community mirror's `src/` directory:
-
-| File | Description |
-|------|-------------|
-| `MervaleScript-Regular.vfb` | Original master source with contour overlaps |
-| `MervaleScript-Regular-TTF.vfb` | TrueType variant with hinting adjustments |
-| `MervaleScript-Regular-OTF.vfb` | Merged/optimized variant for OTF output |
-
-The `.vfb` format is a proprietary FontLab Studio binary format (FontLab 4/5 era). These files are not readily editable with modern open-source tooling (FontForge, fontmake, etc.) without conversion.
-
-No UFO, Glyphs, or other open-source-friendly source formats were found.
+Three VFB files are present: the main master (`MervaleScript-Regular.vfb`), one with contour overlaps optimized for OTF output (`-OTF.vfb`), and one with hinting adjustments for TTF output (`-TTF.vfb`). No UFO, Glyphs, SFD, or other modern buildable sources are available.
 
 ## Build System
 
-The community mirror includes a `.travis.yml` CI configuration using the legacy `fontbakery-build.py` workflow (circa 2014):
-
-- **Tool**: `fontbakery-build.py` (deprecated legacy fontbakery CLI)
-- **Dependencies**: FontForge (Python bindings), ttfautohint, fontTools, fontcrunch
-- **Build command**: `fontbakery-build.py .`
-
-This build system is entirely obsolete and non-functional with current tooling. There is no `Makefile`, no `fontmake` configuration, and no modern build scripts. The font was likely compiled directly from FontLab by the designer and the binary TTF committed.
+No modern build system (gftools builder, fontmake) is available. The VFB format is proprietary (FontLab Studio 4/5) and not editable with modern open-source tooling without conversion.
 
 ## config.yaml Status
 
-No `config.yaml` exists in either:
-- `/mnt/shared/google/fonts/ofl/mervalescript/`
-- `/mnt/shared/gfonts/ofl/mervalescript/`
+No `config.yaml` exists. One cannot be created without converting sources to a modern format (UFO or Glyphs).
 
-The font has never been onboarded with the modern gftools/fontmake build pipeline.
+## Designer & History
+
+Mervale Script is a single-weight handwriting/script typeface designed by **Brian J. Bonislawsky** and **Jim Lyles** for Astigmatic (AOETI), released in 2012.
+
+- **Contact**: astigma@astigmatic.com
+- **Website**: www.astigmatic.com (SSL certificate expired — HTTPS unreachable as of investigation date)
+- **Font version**: v1.000 (November 2012). No updates have been made in over 13 years.
+- **Glyph coverage**: Latin-1, Latin-2, Turkish, Windows Baltic (per FONTLOG). Supports `latin` and `latin-ext` subsets.
+- **Single weight**: Regular (400) only; no variable font or additional weights/styles.
+
+No GitHub organization or user account for "Astigmatic" or "Brian J. Bonislawsky" was found that hosts original font sources. The GitHub user at https://github.com/astigmatic (id 34247703, created 2017-12-04) has only 2 unrelated repositories and is not affiliated with the type foundry.
+
+## Additional Repository
+
+A copy also exists in the `librefonts` GitHub organization:
+
+- **URL**: https://github.com/librefonts/mervalescript
+- **Type**: Third-party mirror, not an authoritative Astigmatic repository
+- **Latest commit**: `31648e2a8d9b3f059379bb37aebb50f0e0b9d465` (2014-10-17)
+
+The mirror contains TTX-exploded font tables and the same VFB source files. It uses an obsolete fontbakery-build pipeline via Travis CI and has been dormant since 2014.
 
 ## Notes
 
-- **Font version**: Only one version exists — v1.000 (November 2012). No updates have been made in over 13 years.
-- **Glyph coverage**: Latin-1, Latin-2, Turkish, Windows Baltic (per FONTLOG). Supports `latin` and `latin-ext` subsets.
-- **Single weight**: Regular (400) only; no variable font or additional weights/styles.
-- **Source availability**: The `.vfb` source files are available in the community mirror but are in a proprietary binary format. Recovery/conversion to a modern open format (UFO) would require FontLab or a `.vfb`-capable converter.
-- **Upstream activity**: No upstream development activity has been detected. The font appears to be unmaintained.
-- **Recommended action**: If modernization is desired, the `.vfb` sources from the community mirror could be opened in FontLab or converted using `vfb2ufo` to produce UFO sources. A `config.yaml` and proper build pipeline would need to be created from scratch. Contacting Astigmatic directly (astigma@astigmatic.com) to confirm source availability and interest in updating would be the appropriate first step.
+- The `.vfb` source files would need conversion via FontLab or `vfb2ufo` to produce UFO sources for modern tooling.
+- Contacting Astigmatic directly (astigma@astigmatic.com) to confirm source availability would be the appropriate first step for modernization.
+- The `librefonts` organization on GitHub is a community archive of free fonts, not maintained by Astigmatic.
