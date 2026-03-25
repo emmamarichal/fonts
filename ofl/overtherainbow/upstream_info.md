@@ -5,32 +5,47 @@
 
 ## Summary
 
-Over the Rainbow is a handwriting font designed by Kimberly Geswein. It was added to Google Fonts on 2011-04-27. The copyright notice references kimberlygeswein.com.
+Over the Rainbow is a handwriting font designed by Kimberly Geswein. The original design sources were found in the `googlefontdirectory-hg` monorepo in FontLab VFB and FontForge SFD formats, which are not buildable with gftools-builder. No canonical designer-owned GitHub repository was found.
 
-## Designer
+## Source Repository
 
-Kimberly Geswein runs KG Fonts (kimberlygeswein.com), where she has produced over 350 fonts since 2006. Her website focuses on commercial font sales and does not link to any GitHub or open-source repositories.
+- **Repo**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) (historical Google Font Directory Mercurial monorepo)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `overtherainbow/src/`
+- **Buildable**: No — legacy formats only (.vfb/.sfd)
 
-## Upstream Repository Search
+### Source Files
 
-The following searches were conducted:
+| File | Format | Notes |
+|------|--------|-------|
+| `OvertheRainbow.vfb` | FontLab VFB | Original source, proprietary binary |
+| `OvertheRainbow-TTF.sfd` | FontForge SFD | TrueType hinting variant |
 
-- GitHub user search for "kimberlygeswein": no GitHub account was found
-- GitHub repository search for "kimberly geswein": only `googlefonts/indieflower` (a different font by the same designer) and an AUR archive package were found
-- GitHub search for "over rainbow font": no designer-owned repository was found
-- GitHub search for "OvertheRainbow": only `librefonts/overtherainbow` (a librefonts mirror) was found
+No UFO or Glyphs sources are available.
 
-## librefonts/overtherainbow Analysis
+## Family Details
 
-The repository https://github.com/librefonts/overtherainbow is a librefonts organization mirror. Its `src/` folder contains:
-- `OvertheRainbow.vfb` — FontLab VFB source file (proprietary binary format)
-- `OvertheRainbow-TTF.sfd` — FontForge SFD source file
+- **Designer**: Kimberly Geswein (KG Fonts)
+- **License**: OFL
+- **Google Fonts date added**: 2011-04-27
 
-No UFO or Glyphs source files were found. This is a librefonts mirror, not the designer's canonical repository.
+## Investigation Details
+
+### Designer Profile
+
+Kimberly Geswein runs KG Fonts (kimberlygeswein.com), where she has produced over 350 fonts since 2006. Her website focuses on commercial font sales and does not link to any GitHub or open-source repositories. No GitHub account was found for "kimberlygeswein".
+
+### GitHub Search
+
+GitHub repository search for "kimberly geswein" found only `googlefonts/indieflower` (a different font by the same designer) and an AUR archive package. Search for "OvertheRainbow" found only `librefonts/overtherainbow` (a librefonts mirror).
+
+### Librefonts Mirror
+
+The `librefonts/overtherainbow` repository (https://github.com/librefonts/overtherainbow) contains the same VFB and SFD source files as the googlefontdirectory-hg monorepo. It is a librefonts mirror, not the designer's canonical repository.
 
 ## Conclusion
 
-No canonical designer-owned upstream repository was found for Over the Rainbow. Kimberly Geswein does not appear to maintain a public GitHub account, and the only source-code repository found is the `librefonts/overtherainbow` mirror, which contains VFB and SFD files only. No METADATA.pb source block was added.
+The original design sources for Over the Rainbow are preserved in the `googlefontdirectory-hg` monorepo as VFB and SFD files. These are legacy formats not buildable with gftools-builder. No modern sources or canonical designer-owned repository exist.
 
 ## References
 
