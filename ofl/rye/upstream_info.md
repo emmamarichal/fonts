@@ -1,14 +1,33 @@
-# Rye — Upstream Source Investigation
+# Rye — Source Metadata Investigation
 
-**Designer**: Nicole Fally (Sorkin Type Co)
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-12
 
-## Summary
+## Source Repository
 
-No canonical upstream repository with UFO or Glyphs source files was found for Rye.
+The `googlefontdirectory-hg` monorepo (the historical Google Font Directory Mercurial archive) contains files for this family.
 
-## Investigation
+- **Repository**: `googlefontdirectory-hg`
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `rye/src/`
+
+## Source Files
+
+The `rye/src/` directory contains design sources in VFB (FontLab) and SFD (FontForge) formats, neither of which can be built with gftools-builder:
+
+- **VFB** (FontLab, proprietary format, not buildable with gftools): Rye-Regular.vfb
+- **SFD** (FontForge, not buildable with gftools-builder): Rye-Regular-OTF.sfd, Rye-Regular-TTF.sfd
+- **OTF** (compiled binaries, not design sources): Rye-Regular.otf
+
+## Buildability
+
+Not buildable with gftools-builder. The sources are in VFB (FontLab proprietary) and SFD (FontForge) formats. Neither format is supported by gftools-builder. Conversion to UFO or Glyphs format would be required.
+
+## Designer
+
+Nicole Fally (Sorkin Type Co)
+
+## Investigation Details
 
 Rye was published under a Sorkin Type Co copyright, with the email `eben@eyebytes.com` (Eben Sorkin). The DESCRIPTION.en_us.html states that source files are available from `http://code.google.com/p/googlefontdirectory/` (the old Google Fonts code repository, now defunct), and directs contributors to contact `sorkineben@gmail.com`.
 
@@ -23,7 +42,3 @@ Searches were conducted for:
 The SorkinType GitHub organization hosts many Sorkin Type Co fonts, but Rye was not among them. The organization's repository list was examined in full and no Rye repository was present. No repository named `Rye` was found under either `googlefonts` or `SorkinType` namespaces.
 
 The original sources for Rye appear to exist only in the defunct Google Code repository.
-
-## Conclusion
-
-No canonical upstream repository with editable UFO or Glyphs sources was found for Rye. No source block was added to METADATA.pb.
