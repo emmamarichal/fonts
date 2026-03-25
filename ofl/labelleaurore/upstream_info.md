@@ -5,9 +5,20 @@
 **Status**: complete (VFB-only sources)
 **Confidence**: HIGH
 
+## Source Repository
+
+The original design sources for La Belle Aurore are preserved in the **googlefontdirectory-hg** Mercurial monorepo at commit `52f780bc9d197280a9f430574e179a5f233c56b6`, under the path `labelleaurore/src/`.
+
+### Source Files in googlefontdirectory-hg
+
+- `LaBelleAurore.vfb` -- FontLab binary source (proprietary, not buildable with gftools-builder)
+- `METADATA_comments.txt` -- metadata file, not a design source
+
+The only design source is a VFB file (FontLab binary format), which is not compatible with gftools-builder. No `.glyphs`, `.ufo`, `.designspace`, or `.sfd` files are present.
+
 ## Summary
 
-La Belle Aurore is a handwriting font designed by Kimberly Geswein, added to Google Fonts on 2011-06-08. The upstream repository at `librefonts/labelleaurore` contains only VFB (FontLab binary) sources, which are not compatible with gftools-builder. No config.yaml is applicable.
+La Belle Aurore is a handwriting font designed by Kimberly Geswein, added to Google Fonts on 2011-06-08. The sources are VFB-only, which are not compatible with gftools-builder. No config.yaml is applicable.
 
 ## METADATA.pb Analysis
 
@@ -21,16 +32,12 @@ Current METADATA.pb fields:
 - **date_added**: 2011-06-08
 - **classifications**: DISPLAY, HANDWRITING
 
-## Upstream Repository
+## Upstream Repository (librefonts archive)
 
 - **URL**: https://github.com/librefonts/labelleaurore
 - **Accessible**: Yes (HTTP 200)
-- **Local cache**: `upstream_repos/fontc_crater_cache/librefonts/labelleaurore/`
-- **Clean**: Yes (no local modifications, up to date with origin/master)
 
-### Repository Contents
-
-The repository has a single commit:
+The librefonts repository has a single commit:
 
 | Commit | Date | Author | Message |
 |--------|------|--------|---------|
@@ -43,10 +50,6 @@ This is an initial commit that populates the entire repository with:
 - `src/METADATA_comments.txt` (font-optimizer subset commands)
 - `METADATA.json`, `DESCRIPTION.en_us.html`, `OFL.txt`
 - `.travis.yml` (fontbakery CI configuration)
-
-### Source Files
-
-The only source file is `src/LaBelleAurore.vfb`, a FontLab binary format file. No `.glyphs`, `.ufo`, `.designspace`, or `.sfd` files were found. VFB files are not supported by gftools-builder.
 
 ### Build Configuration
 
@@ -62,8 +65,6 @@ The font file in google/fonts was modified by these commits:
 | 8ccda7bf7 | 2015-08-05 | Dave Crossland | Fix fsType for 40 font files |
 
 The current font file (`LaBelleAurore.ttf`, 59364 bytes, SHA256: `ed67462999e05f0cdac92f686374661e4d68c56fdcd7d05725c6df7b41eabd2a`) matches the version from the fsType fix commit (8ccda7bf7). The font has not been rebuilt from source since; the fsType fix was a binary patch to correct embedding permissions.
-
-Note: Commit 76adaf1d2 ("deploy: c7e2740...") from 2021-11-01 appeared to delete the file, but this commit exists only on an abandoned deployment branch and is not part of the main branch history.
 
 No override `config.yaml` exists in the `ofl/labelleaurore/` directory of google/fonts.
 
