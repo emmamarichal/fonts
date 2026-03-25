@@ -1,10 +1,26 @@
+# Sofadi One -- Upstream Source Investigation
+
 **Model**: Claude Opus 4.6
 
-# Sofadi One — Upstream Source Investigation
+## Source Repository
 
-## Summary
+Design sources were found in the **googlefontdirectory-hg** archive (Google Font Directory, Mercurial-era).
 
-Sofadi One is a display typeface designed by Botjo Nikoltchev and released in 2011. It was added to Google Fonts on 2012-09-30.
+- **Repository**: googlefontdirectory-hg
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `sofadione/src/`
+
+## Source Files
+
+The source directory contains: 3 VFB files (FontLab, proprietary format).
+
+The VFB format is proprietary (FontLab) and cannot be built with gftools-builder. These sources are **not directly buildable** with the current open-source pipeline.
+
+### Key source files
+
+- `SofadiOne-Regular-OTF.vfb` (VFB, proprietary)
+- `SofadiOne-Regular-TTF.vfb` (VFB, proprietary)
+- `SofadiOne-Regular.vfb` (VFB, proprietary)
 
 ## Designer
 
@@ -18,11 +34,3 @@ A search for canonical upstream repositories was conducted on GitHub. Searches f
 - **google-fonts-bower/sofadione-bower** — a deprecated bower packaging mirror.
 
 No repository owned by Botjo Nikoltchev containing UFO or Glyphs sources was found.
-
-## Status
-
-No canonical upstream repository with UFO or Glyphs sources was found. No source block was added.
-
-## Confidence
-
-Low — No public source repository was found for this typeface.
