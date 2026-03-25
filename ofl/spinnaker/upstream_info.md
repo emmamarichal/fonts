@@ -1,13 +1,26 @@
-# Spinnaker — Upstream Investigation
+# Spinnaker -- Upstream Source Investigation
 
 **Model**: Claude Opus 4.6
-**Date**: 2026-03-12
-**Investigator**: AI agent (Claude) under guidance of @felipesanches
 
-## Summary
+## Source Repository
 
-No canonical upstream repository with UFO or Glyphs source files was found for
-Spinnaker.
+Design sources were found in the **googlefontdirectory-hg** archive (Google Font Directory, Mercurial-era).
+
+- **Repository**: googlefontdirectory-hg
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `spinnaker/src/`
+
+## Source Files
+
+The source directory contains: 1 VFB file (FontLab, proprietary format); 1 SFD file (FontForge format); 1 compiled binary (OTF/TTF, not design sources).
+
+Neither VFB (FontLab, proprietary) nor SFD (FontForge) formats are supported by gftools-builder. These sources are **not directly buildable** with the current open-source pipeline.
+
+### Key source files
+
+- `Spinnaker-Regular-OTF.vfb` (VFB, proprietary)
+- `Spinnaker-Regular-TTF.sfd` (SFD, FontForge)
+- `Spinnaker-Regular.otf` (compiled binary)
 
 ## Research
 
@@ -20,11 +33,6 @@ No GitHub repository was found for Spinnaker under SorkinType, Elena Albertoni,
 or related names. The SorkinType GitHub organization did not include a
 Spinnaker repository among its public repos.
 
-## Decision
-
-No `source` block was added to `METADATA.pb`. The referenced source location
-(Google Code) was no longer accessible, and no alternative repository with
-open editable source files was found.
 
 ## Notes
 
