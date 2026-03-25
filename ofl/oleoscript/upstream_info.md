@@ -5,7 +5,27 @@
 
 ## Summary
 
-No canonical upstream repository with Glyphs or UFO sources was found. The only GitHub repository identified was `librefonts/oleoscript`, which is a librefonts mirror containing VFB (FontLab) and SFD (FontForge) source files. No designer-owned GitHub repository was found for Soytutype. No METADATA.pb changes were made.
+The original design sources for Oleo Script were found in the `googlefontdirectory-hg` monorepo. The sources are in FontLab VFB and FontForge SFD formats, which are not buildable with gftools-builder. No canonical designer-owned GitHub repository was found.
+
+## Source Repository
+
+- **Repo**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) (historical Google Font Directory Mercurial monorepo)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `oleoscript/src/`
+- **Buildable**: No — legacy formats only (.vfb/.sfd)
+
+### Source Files
+
+| File | Format | Notes |
+|------|--------|-------|
+| `OleoScript-Regular-OTF.vfb` | FontLab VFB | Proprietary binary, not buildable with gftools |
+| `OleoScript-Regular-TTF.sfd` | FontForge SFD | Not buildable with gftools-builder |
+| `OleoScript-Bold-OTF.vfb` | FontLab VFB | Proprietary binary, not buildable with gftools |
+| `OleoScript-Bold-TTF.sfd` | FontForge SFD | Not buildable with gftools-builder |
+| `OleoScript-Regular.otf` | Compiled binary | Not a design source |
+| `OleoScript-Bold.otf` | Compiled binary | Not a design source |
+
+No UFO or Glyphs sources are available. The VFB files are the primary design sources, with SFD files serving as TrueType-hinting variants.
 
 ## Family Details
 
@@ -15,7 +35,7 @@ No canonical upstream repository with Glyphs or UFO sources was found. The only 
 - **Google Fonts date added**: 2012-03-29
 - **Copyright**: "Copyright (c) 2012, Soytutype (contact@soytutype.com.ar|soytutype@gmail.com), with reserved fontname 'Oleo'"
 
-## Search Results
+## Investigation Details
 
 ### GitHub Search
 
@@ -27,23 +47,12 @@ The Soytutype website (`www.soytutype.com.ar`) was unreachable (connection refus
 
 ### Librefonts Mirror
 
-The `librefonts/oleoscript` repository was found on GitHub. Its `src/` directory contains:
-- `OleoScript-Regular-OTF.vfb` — FontLab VFB source
-- `OleoScript-Regular-TTF.sfd` — FontForge SFD source
-- `OleoScript-Bold-OTF.vfb` — FontLab VFB source
-- `OleoScript-Bold-TTF.sfd` — FontForge SFD source
-- Various TTX decompiled binary files
-
-This is a librefonts mirror, not a canonical designer-owned repository.
+The `librefonts/oleoscript` repository contains the same VFB and SFD source files as the googlefontdirectory-hg monorepo. This is a librefonts mirror, not a canonical designer-owned repository.
 
 ### FONTLOG
 
 The FONTLOG confirmed source files exist in VFB and SFD formats, with an initial release date of 27 March 2012.
 
-## Cached Upstream Repos
-
-No cached clone was found in `/mnt/shared/upstream_repos/fontc_crater_cache/` for this family.
-
 ## Conclusion
 
-No canonical upstream repository with Glyphs or UFO sources exists for Oleo Script. The original sources were in FontLab VFB format (with a FontForge SFD variant for TrueType hinting). Both source formats are legacy formats not suitable for modern font development workflows. No METADATA.pb changes were made.
+The original design sources for Oleo Script are preserved in the `googlefontdirectory-hg` monorepo as VFB and SFD files. These are legacy formats not buildable with gftools-builder. No modern (UFO/Glyphs) sources exist, and no canonical designer-owned repository was found.
