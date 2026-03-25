@@ -1,52 +1,47 @@
-# Averia Libre
+# Averia Libre -- Source Investigation
 
-- **Date**: 2026-03-03
-- **Model**: Claude Opus 4.6
-- **Status**: missing_config
-- **Designer**: Dan Sayers
+**Model**: Claude Opus 4.6
+**Date**: 2026-03-03
 
-## Source Data
+## Source Repository
 
-| Field           | Value                                              |
-|-----------------|----------------------------------------------------|
-| repository_url  | https://github.com/librefonts/averialibre           |
-| commit          | 091de18a939349eeae407b64f045296a771f6882            |
-| config_yaml     | none (TTX-only sources)                             |
+**Repository**: [googlefontdirectory-hg](https://code.google.com/archive/p/googlefontdirectory/) (Mercurial monorepo)
+**Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+**Source path**: `averialibre/src/`
 
-## How URL Found
+### Source Files in googlefontdirectory-hg
 
-The METADATA.pb in google/fonts has no source block and no `repository_url`. The cached upstream repo at `fontc_crater_cache/librefonts/averialibre` has its git remote set to `https://github.com/librefonts/averialibre`. This is a `librefonts` organization repo, part of a large collection of Google Fonts family mirrors that were created around 2014. The repo contains the same TTX-decomposed source files and metadata files (FONTLOG.txt, OFL.txt, DESCRIPTION.en_us.html) that correspond to this font family.
+| File | Format | Buildable |
+|------|--------|-----------|
+| `METADATA_comments.txt` | Metadata | N/A |
 
-## How Commit Identified
+The `src/` directory contains only `METADATA_comments.txt` -- no original design sources. The font was created algorithmically (see below), so no traditional editable sources exist.
 
-The upstream repo has only a single commit:
+## Designer
 
-- `091de18` (2014-10-17) by hash3g: "update .travis.yml" -- this is the initial (and only) commit, which added all TTX source files, the Travis CI configuration, and metadata files.
+Dan Sayers -- http://iotic.com/averia/
 
-There is no other commit to choose from. The repo's `src/VERSIONS.txt` records all fonts at Version 1.001, while the fonts currently in google/fonts are v1.002 (updated via PR #837 in August 2017 by Marc Foley). This means the upstream repo predates the last font update in google/fonts and was never updated to reflect the v1.002 hotfix.
+The Averia font family was created by algorithmically averaging the outlines of all 725 OFL fonts from Google Fonts (as of November 2011). There are no traditional editable design sources -- the font outlines were generated programmatically using FontForge.
 
-### google/fonts commit history for `ofl/averialibre/`:
+## librefonts Mirror
 
-1. `90abd17` (2015-03-07) -- Initial commit of the google/fonts repo (bulk import)
-2. `fc10731` (2017-08-07) -- "hotfix-averialibre: v1.002 added" (PR #837 by Marc Foley). Updated all 6 TTF files with minor size changes and updated DESCRIPTION.en_us.html and METADATA.pb.
-3. `76adaf1` (2021-11-01) -- deploy commit that temporarily removed and re-added files (infrastructure change)
-4. Several metadata-only commits (METADATA.pb format changes, language support updates)
+A mirror exists at `https://github.com/librefonts/averialibre` with a single commit:
+- `091de18` (2014-10-17) by hash3g: "update .travis.yml"
 
-The v1.002 hotfix (PR #837) is the last substantive update to the font binaries. The PR body was empty, providing no upstream reference. Since the upstream repo was never updated past v1.001, the v1.002 binaries were likely produced by Marc Foley directly from the TTX sources with modifications, or from a separate pipeline not reflected in the upstream repo.
+The repo contains TTX-decomposed font data (6 styles: Regular, Bold, Italic, BoldItalic, Light, LightItalic) and metadata files. No `.glyphs`, `.ufo`, `.designspace`, or `.sfd` files exist. The TTX files represent v1.001 of the font.
 
-## How Config Resolved
+## google/fonts History
 
-The upstream repo contains **no gftools-builder compatible sources**. The only "source" files are TTX (FontTools XML) decompositions of the TTF font tables:
+1. `90abd17` (2015-03-07) -- Initial commit of the google/fonts repo (bulk import, v1.001)
+2. `fc10731` (2017-08-07) -- "hotfix-averialibre: v1.002 added" (PR #837 by Marc Foley). Updated all 6 TTF files and DESCRIPTION/METADATA.
+3. Several metadata-only commits thereafter (METADATA.pb format changes, language support updates)
 
-- 6 master `.ttx` files (one per style: Regular, Bold, Italic, BoldItalic, Light, LightItalic)
-- Each master `.ttx` references multiple table-specific `.ttx` files (e.g., `_g_l_y_f.ttx`, `_c_m_a_p.ttx`, `_k_e_r_n.ttx`, etc.)
+The googlefontdirectory-hg and librefonts sources correspond to v1.001, while google/fonts serves v1.002. The v1.002 hotfix (PR #837) had an empty PR body, providing no upstream reference. The updated binaries were likely produced by Marc Foley directly.
 
-There are **no** `.glyphs`, `.ufo`, `.designspace`, or `.sfd` files anywhere in the repo. The `.travis.yml` shows a `fontbakery-build.py` pipeline from 2014, which is a legacy build system, not gftools-builder.
+## Build Configuration
 
-The font was created by Dan Sayers using an algorithmic averaging process (averaging all 725 OFL fonts from Google Fonts as of November 2011). There are no traditional editable design sources -- the font outlines were generated programmatically. The TTX files are the closest thing to "source" that exists.
-
-**An override config.yaml cannot be created** because gftools-builder requires `.glyphs`, `.ufo`, or `.designspace` sources. TTX files are not a supported input format for gftools-builder.
-
-## Conclusion
-
-Averia Libre has a known upstream repository at `https://github.com/librefonts/averialibre` with a single commit (`091de18`). However, the repo only contains TTX-decomposed font data from v1.001, while google/fonts serves v1.002 (updated in 2017). The font was created algorithmically by averaging other fonts, so no traditional design sources exist. No config.yaml can be created because the sources are TTX-only, which is not compatible with gftools-builder. Status is `missing_config` with the note that this is inherent to the font's nature -- there are no editable design sources to build from.
+- **No config.yaml** exists in any known repository
+- **No override config.yaml** exists in the google/fonts family directory
+- No gftools-builder compatible sources exist (TTX files are not a supported input format)
+- An override config.yaml cannot be created because there are no `.glyphs`, `.ufo`, or `.designspace` sources
+- This is inherent to the font's nature -- it was created through algorithmic averaging, not traditional font design
