@@ -3,45 +3,50 @@
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-12
 
-## Repository
+## Source Repository
 
-The best available upstream source for Niconne is the **librefonts** organization mirror on GitHub:
+- **Repository**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) (Mercurial monorepo, pre-GitHub era)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `ofl/niconne/src/`
+- **Buildable**: No — legacy formats only (.vfb/.sfd)
 
-- **Repository**: https://github.com/librefonts/niconne
-- **Designer**: Vernon Adams (vern@newtypography.co.uk)
-- **Default branch**: master
-- **Latest commit**: `80a93c0d8fd4a56727ce0dada12b2d6accf7e2bc` (2014-10-17), message: "update .travis.yml"
-- **Last pushed**: 2014-10-17
+The font sources are in the **googlefontdirectory-hg** monorepo, a git mirror of the
+original Google Code Mercurial repository (`code.google.com/p/googlefontdirectory`)
+that was the canonical host for Google Fonts from 2010 to 2013.
 
-No official upstream repository maintained by Vernon Adams himself was found on GitHub. Vernon Adams was active in the Google Fonts ecosystem (email: vern@newtypography.co.uk, website: newtypography.co.uk) but does not appear to have a personal GitHub account with public repositories. The `librefonts` organization on GitHub hosted a collection of Google Fonts source files around 2014, and this appears to be the closest thing to a canonical source repo for Niconne.
-
-## Source Files
-
-The `librefonts/niconne` repository contains the following source files under `src/`:
+### Source Files
 
 | File | Type |
 |------|------|
-| `src/Niconne-Regular-OTF.vfb` | FontLab Studio source (OTF workflow) |
-| `src/Niconne-Regular-TTF.sfd` | FontForge source (TTF workflow, ~825 KB) |
-| `src/Niconne-Regular.otf.*` + `.ttx` | TTX table dumps |
-| `src/VERSIONS.txt` | Records version 1.002 |
+| `Niconne-Regular-OTF.vfb` | FontLab VFB source, OTF variant (proprietary, not buildable with gftools) |
+| `Niconne-Regular-TTF.sfd` | FontForge SFD source, TTF variant (not buildable with gftools-builder) |
+| `Niconne-Regular.otf` | Compiled OTF binary (not a design source) |
+| `METADATA_comments.txt` | Metadata comments (not a source file) |
 
-The font in Google Fonts is Version 1.002 (confirmed from binary name table), which matches the version recorded in `src/VERSIONS.txt`.
+The VFB file is the original design source (FontLab proprietary format). The SFD is a FontForge conversion used for TrueType production. Neither format is compatible with gftools-builder.
 
-The root of the repository also contains the full TTX decomposition of the TTF (`Niconne-Regular.ttf.*.ttx`) in addition to the OTF TTX dumps in `src/`.
+## Designer and Provenance
+
+- **Designer**: Vernon Adams (vern@newtypography.co.uk, newtypography.co.uk)
+- Vernon Adams passed away in 2014; no active maintainer exists for his font projects.
+- No official upstream repository maintained by Vernon Adams was found on GitHub. He does not appear to have had a personal GitHub account with public repositories.
+
+## Additional Mirror
+
+A third-party mirror exists at https://github.com/librefonts/niconne (latest commit `80a93c0` on 2014-10-17, "update .travis.yml"). It contains the same VFB and SFD sources plus TTX decompilations. The `src/VERSIONS.txt` records version 1.002, matching the Google Fonts binary.
+
+The `librefonts` organization on GitHub hosted a collection of Google Fonts source files around 2014 and appears to be the closest thing to a canonical source archive for this family.
 
 ## Build System
 
-No Makefile, build script, or automated build system is present in the repository. The `.travis.yml` file exists (last touched in the final commit) but its content was not retrieved. Given the era (2014) and that the source is a single-weight `.vfb`/`.sfd`, the build process was almost certainly a manual FontLab/FontForge export workflow.
+Not applicable — the VFB source requires FontLab Studio and the SFD source requires FontForge. Neither is compatible with the modern gftools-builder pipeline.
 
-## config.yaml Status
+## config.yaml
 
-No `config.yaml` exists. One could be written targeting the `librefonts/niconne` repository, but given the repository has been unmaintained since 2014 and Vernon Adams is deceased (passed away ~2014), the font is unlikely to receive upstream updates.
+Does not exist. Cannot be created — no gftools-builder compatible sources available.
 
 ## Notes
 
-- Vernon Adams passed away in 2014; no active maintainer exists for his font projects.
-- The `librefonts` organization appears to be a semi-official archive of Google Fonts sources from that era, possibly maintained by the Google Fonts team at the time.
-- The SFD source (`Niconne-Regular-TTF.sfd`) is the most practical source file for rebuilding the TTF.
-- The version in Google Fonts (1.002) matches the librefonts mirror — the repo reflects exactly what is shipped.
-- **Confidence**: Medium-High. The librefonts mirror is the best available source and matches the shipped version; however, it is not an "official" designer-maintained repo.
+- The font in Google Fonts is Version 1.002, matching `VERSIONS.txt` in the librefonts mirror.
+- The SFD source (`Niconne-Regular-TTF.sfd`) is the most practical source file for rebuilding the TTF, though not via gftools-builder.
+- **Confidence**: Medium-High. The librefonts mirror is the best available source and matches the shipped version; however, it is not a designer-maintained repository.
