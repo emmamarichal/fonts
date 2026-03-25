@@ -1,13 +1,24 @@
-# Stalinist One — Upstream Investigation
+# Stalinist One -- Upstream Source Investigation
 
 **Model**: Claude Opus 4.6
-**Date**: 2026-03-12
-**Investigator**: AI agent (Claude) under guidance of @felipesanches
 
-## Summary
+## Source Repository
 
-No canonical upstream repository with UFO or Glyphs source files was found for
-Stalinist One.
+Design sources were found in the **googlefontdirectory-hg** archive (Google Font Directory, Mercurial-era).
+
+- **Repository**: googlefontdirectory-hg
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `stalinistone/src/`
+
+## Source Files
+
+The source directory contains: 1 VFB file (FontLab, proprietary format).
+
+The VFB format is proprietary (FontLab) and cannot be built with gftools-builder. These sources are **not directly buildable** with the current open-source pipeline.
+
+### Key source files
+
+- `StalinistOne-Regular-TTF.vfb` (VFB, proprietary)
 
 ## Research
 
@@ -17,10 +28,6 @@ Searches on GitHub for repositories by these designers or under the font name
 returned no results. No GitHub accounts for Alexey Maslov or Jovanny Lemonad
 (lemonad@jovanny.ru) were found to have public font source repositories.
 
-## Decision
-
-No `source` block was added to `METADATA.pb`. No publicly accessible source
-repository was found.
 
 ## Notes
 
