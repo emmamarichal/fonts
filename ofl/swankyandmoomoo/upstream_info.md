@@ -1,10 +1,25 @@
+# Swanky and Moo Moo -- Upstream Source Investigation
+
 **Model**: Claude Opus 4.6
 
-# Swanky and Moo Moo — Upstream Source Investigation
+## Source Repository
 
-## Summary
+Design sources were found in the **googlefontdirectory-hg** archive (Google Font Directory, Mercurial-era).
 
-No canonical upstream repository with UFO or Glyphs sources was found for Swanky and Moo Moo. The only GitHub repository found was a librefonts mirror (`librefonts/swankyandmoomoo`) containing only VFB (FontLab) and SFD (FontForge) sources.
+- **Repository**: googlefontdirectory-hg
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `swankyandmoomoo/src/`
+
+## Source Files
+
+The source directory contains: 1 VFB file (FontLab, proprietary format); 1 SFD file (FontForge format).
+
+Neither VFB (FontLab, proprietary) nor SFD (FontForge) formats are supported by gftools-builder. These sources are **not directly buildable** with the current open-source pipeline.
+
+### Key source files
+
+- `SwankyandMooMoo.vfb` (VFB, proprietary)
+- `SwankyandMooMoo-TTF.sfd` (SFD, FontForge)
 
 ## Designer
 
@@ -16,7 +31,3 @@ Kimberly Geswein (kimberlygeswein.com)
 - Kimberly Geswein had no identifiable GitHub presence (no matching GitHub user found).
 - Her fonts appear to be distributed via her website and font distribution platforms, without public source repositories.
 - The font was created in 2010, predating common use of version-controlled font workflows.
-
-## Conclusion
-
-No source block was added. The font sources only exist as VFB/SFD in a librefonts mirror, which is excluded per the investigation policy.
