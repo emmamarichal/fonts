@@ -1,13 +1,29 @@
 # Racing Sans One — Source Metadata Investigation
 
-**Model**: Claude Sonnet 4.6
+**Model**: Claude Opus 4.6
 **Date**: 2026-03-12
 
 ## Source Repository
 
-No suitable source repository was found for Racing Sans One.
+The `googlefontdirectory-hg` monorepo (the historical Google Font Directory Mercurial archive) contains files for this family.
 
-## What Was Done
+- **Repository**: `googlefontdirectory-hg`
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `racingsansone/src/`
+
+## Source Files
+
+The `racingsansone/src/` directory contains design sources in proprietary VFB format only, which cannot be built with gftools-builder:
+
+- **VFB** (FontLab, proprietary format, not buildable with gftools): RacingSansOne-Regular-OT.vfb, RacingSansOne-Regular-TTF.vfb, RacingSansOne-Regular.vfb
+- **OTF** (compiled binaries, not design sources): RacingSansOne-Regular.otf
+- **Other**: RacingsSansOne-Preview.jpg
+
+## Buildability
+
+Not buildable with gftools-builder. The VFB sources are in FontLab's proprietary format. Conversion to UFO or Glyphs format would be required before a reproducible build pipeline could be established.
+
+## Investigation Details
 
 The following searches were performed:
 
