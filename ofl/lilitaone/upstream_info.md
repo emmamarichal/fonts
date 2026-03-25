@@ -9,11 +9,25 @@
 
 ---
 
+## Source Repository
+
+The original design sources for Lilita One are preserved in the **googlefontdirectory-hg** Mercurial monorepo at commit `52f780bc9d197280a9f430574e179a5f233c56b6`, under the path `lilitaone/src/`.
+
+### Source Files in googlefontdirectory-hg
+
+- `LilitaOne-Regular.vfb` -- FontLab binary source (proprietary, not buildable with gftools-builder)
+- `LilitaOne-Regular-OTF.vfb` -- FontLab binary source (proprietary, not buildable with gftools-builder)
+- `LilitaOne-Regular-TTF.sfd` -- FontForge SFD file (legacy, not buildable with gftools-builder)
+- `LilitaOne-Regular.otf` -- compiled OTF binary, not a design source
+- `METADATA_comments.txt` -- metadata file, not a design source
+
+The design sources are exclusively VFB and SFD legacy formats. No `.glyphs`, `.ufo`, or `.designspace` files are present. These formats are not compatible with gftools-builder.
+
 ## METADATA.pb Analysis
 
 The current METADATA.pb at `ofl/lilitaone/METADATA.pb` contained no `source { }` block. The file listed the family as a single-weight (Regular 400) display sans-serif font. The copyright attributed the font to Juan Montoreano (juan@remolacha.biz) with a 2011 date.
 
-## Upstream Repository
+## Upstream Repository (librefonts archive)
 
 **Repository URL**: https://github.com/librefonts/lilitaone
 **Status**: Accessible (HTTP 200)
@@ -24,19 +38,7 @@ The current METADATA.pb at `ofl/lilitaone/METADATA.pb` contained no `source { }`
 
 The repository was part of the `librefonts` organization, which was a batch archival effort by hash3g to preserve Google Fonts source files on GitHub. The repo was created on 2014-07-16 and received a single commit on 2014-10-17 with the message "update .travis.yml". This commit contained the entire initial content of the repository (41 files added, no prior history).
 
-The repository was cached locally at `upstream_repos/fontc_crater_cache/librefonts/lilitaone/`. The cache was clean and up to date with the remote.
-
-## Source Files
-
-The upstream repository contained the following source files in the `src/` directory:
-
-- `LilitaOne-Regular-TTF.sfd` -- Spline Font Database (FontForge format)
-- `LilitaOne-Regular-OTF.vfb` -- FontLab VFB binary
-- `LilitaOne-Regular.vfb` -- FontLab VFB binary
-
-These are legacy font source formats. There were no `.glyphs`, `.ufo`, or `.designspace` files anywhere in the repository. The SFD file header showed it was originally created in FontForge with a modification timestamp from January 2012, consistent with the font's onboarding date.
-
-The repository also contained TTX (FontTools XML) decompositions of both the TTF and OTF font files at the root level and in `src/`.
+The repository contained the same source files as the googlefontdirectory-hg monorepo (SFD/VFB only), plus TTX (FontTools XML) decompositions of both the TTF and OTF font files. The SFD file header showed it was originally created in FontForge with a modification timestamp from January 2012, consistent with the font's onboarding date.
 
 ## Build Configuration
 
@@ -72,8 +74,7 @@ The designer was Juan Montoreano, contactable at juan@remolacha.biz (website: ht
 
 **Repository URL**: `https://github.com/librefonts/lilitaone`
 **Commit**: `d77736db8dc9d73e0c32093225a38a66e42400b8` (the only commit; archival import)
-**Config**: None (SFD-only sources, not gftools-builder compatible)
-**Status**: `missing_config` -- The upstream repo had only legacy SFD/VFB sources. No gftools-builder compatible sources existed, making it impossible to create a config.yaml without source conversion.
+**Config**: None (SFD/VFB-only sources, not gftools-builder compatible)
 **Confidence**: HIGH -- The repository URL was confirmed accessible, the commit hash was the sole commit, and the source format limitation was clearly verified.
 
 The librefonts/lilitaone repository served as an archival mirror rather than an active development repository. The original sources predated the Google Fonts onboarding and were created in FontForge/FontLab. To make this font fully rebuildable via gftools-builder, the SFD/VFB sources would need to be converted to a supported format (UFO or Glyphs) first.
