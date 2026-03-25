@@ -1,14 +1,27 @@
-# Sonsie One — Upstream Investigation
+# Sonsie One -- Upstream Source Investigation
 
 **Model**: Claude Opus 4.6
-**Date**: 2026-03-12
-**Investigator**: AI agent (Claude) under guidance of @felipesanches
 
-## Summary
+## Source Repository
 
-No canonical upstream repository with UFO or Glyphs source files was found for
-Sonsie One. The original sources were in FontLab VBF format, which is not
-an open editable format suitable for the source metadata.
+Design sources were found in the **googlefontdirectory-hg** archive (Google Font Directory, Mercurial-era).
+
+- **Repository**: googlefontdirectory-hg
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `sonsieone/src/`
+
+## Source Files
+
+The source directory contains: 2 VFB files (FontLab, proprietary format); 1 SFD file (FontForge format); 1 compiled binary (OTF/TTF, not design sources).
+
+Neither VFB (FontLab, proprietary) nor SFD (FontForge) formats are supported by gftools-builder. These sources are **not directly buildable** with the current open-source pipeline.
+
+### Key source files
+
+- `SonsieOne-Regular-OTF.vfb` (VFB, proprietary)
+- `SonsieOne-Regular.vfb` (VFB, proprietary)
+- `SonsieOne-Regular-TTF.sfd` (SFD, FontForge)
+- `SonsieOne-Regular.otf` (compiled binary)
 
 ## Research
 
@@ -19,11 +32,6 @@ format by Eben Sorkin. No GitHub repository was found under Sorkin Type
 (`SorkinType` GitHub org does not include Sonsie One), nor under Riccardo
 De Franceschi's name.
 
-## Decision
-
-No `source` block was added to `METADATA.pb`. The original sources were in
-FontLab VBF (proprietary) format, which is excluded from consideration per
-the investigation policy.
 
 ## Notes
 
