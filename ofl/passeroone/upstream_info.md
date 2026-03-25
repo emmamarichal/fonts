@@ -5,23 +5,40 @@
 
 ## Summary
 
-No canonical upstream GitHub repository was found for Passero One. The FONTLOG.txt confirmed that the font was mastered from FontLab VFB (VBF) format, and the DESCRIPTION.en_us.html referenced the now-defunct Google Code project hosting (code.google.com/p/googlefontdirectory/) as the source location. The SorkinType GitHub organization does not contain a Passero One repository.
+The original design sources for Passero One were found in the `googlefontdirectory-hg` monorepo in FontLab VFB and FontForge SFD formats, which are not buildable with gftools-builder. No canonical designer-owned GitHub repository was found, and the SorkinType GitHub organization does not contain a Passero One repository.
 
-## Investigation
+## Source Repository
 
-The METADATA.pb listed the designer as Viktoriya Grabowska with copyright held by Sorkin Type Co, dated 2011.
+- **Repo**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) (historical Google Font Directory Mercurial monorepo)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `passeroone/src/`
+- **Buildable**: No — legacy formats only (.vfb/.sfd)
 
-The FONTLOG.txt described the font history:
-- Original design by Viktoriya Grabowska in FontLab VBF format
-- Mastered and spaced by Eben Sorkin (Sorkin Type Co)
-- The source format was FontLab VFB
+### Source Files
 
-The DESCRIPTION.en_us.html pointed to `code.google.com/p/googlefontdirectory/` as the source location, which is the old Google Code project hosting that has since been shut down and is only available as an archive.
+| File | Format | Notes |
+|------|--------|-------|
+| `PasseroOne-Regular.vfb` | FontLab VFB | Original source, proprietary binary |
+| `PasseroOne-Regular-TTF.sfd` | FontForge SFD | TrueType variant |
+| `PasseroOne-Regular.otf` | Compiled binary | Not a design source |
 
-A web search was conducted for SorkinType's GitHub organization repositories. Sorkin Type has 67+ repositories on GitHub, but none named PasseroOne, Passero, or Passero-One were found in the results.
+The VFB file is the primary design source. No UFO or Glyphs sources are available.
 
-The google/fonts FONTLOG indicates this font was contributed in August–December 2011, predating GitHub becoming the standard for font source hosting.
+## Family Details
+
+- **Designer**: Viktoriya Grabowska (design), Eben Sorkin (mastering, Sorkin Type Co)
+- **License**: OFL
+- **Google Fonts date added**: 2011
+- **Copyright**: Sorkin Type Co, 2011
+
+## Investigation Details
+
+The FONTLOG.txt described the font history: original design by Viktoriya Grabowska in FontLab VFB format, mastered and spaced by Eben Sorkin (Sorkin Type Co).
+
+The DESCRIPTION.en_us.html pointed to `code.google.com/p/googlefontdirectory/` as the source location, which is the old Google Code project hosting (now defunct, available only as an archive).
+
+Sorkin Type has 67+ repositories on GitHub, but none named PasseroOne, Passero, or Passero-One were found. The font was contributed in August-December 2011, predating GitHub becoming the standard for font source hosting.
 
 ## Conclusion
 
-No canonical upstream GitHub repository was found. Sources are VFB-only, originally hosted on Google Code (now defunct). No METADATA.pb changes were made.
+The original design sources for Passero One are preserved in the `googlefontdirectory-hg` monorepo as VFB and SFD files. These are legacy formats not buildable with gftools-builder. The font predates GitHub-era source hosting, and no modern repository was ever created.
