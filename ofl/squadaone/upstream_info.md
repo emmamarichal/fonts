@@ -1,13 +1,26 @@
-# Squada One — Upstream Investigation
+# Squada One -- Upstream Source Investigation
 
 **Model**: Claude Opus 4.6
-**Date**: 2026-03-12
-**Investigator**: AI agent (Claude) under guidance of @felipesanches
 
-## Summary
+## Source Repository
 
-No canonical upstream repository with UFO or Glyphs source files was found for
-Squada One.
+Design sources were found in the **googlefontdirectory-hg** archive (Google Font Directory, Mercurial-era).
+
+- **Repository**: googlefontdirectory-hg
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `squadaone/src/`
+
+## Source Files
+
+The source directory contains: 1 VFB file (FontLab, proprietary format); 1 SFD file (FontForge format); 1 compiled binary (OTF/TTF, not design sources).
+
+Neither VFB (FontLab, proprietary) nor SFD (FontForge) formats are supported by gftools-builder. These sources are **not directly buildable** with the current open-source pipeline.
+
+### Key source files
+
+- `SquadaOne-Regular.vfb` (VFB, proprietary)
+- `SquadaOne-Regular-TTF.sfd` (SFD, FontForge)
+- `SquadaOne-Regular.otf` (compiled binary)
 
 ## Research
 
@@ -18,10 +31,6 @@ names returned no relevant results. The GitHub user `joeprince` exists but had
 only an unrelated repository (`k-r`). No Admix Designs GitHub organization was
 found.
 
-## Decision
-
-No `source` block was added to `METADATA.pb`. No publicly accessible source
-repository was found.
 
 ## Notes
 
