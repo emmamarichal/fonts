@@ -3,9 +3,22 @@
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-12
 
-## Repository
+## Source Repository
 
-- **Primary upstream (librefonts mirror)**: https://github.com/librefonts/novaslim
+- **Repository**: [googlefontdirectory-hg](https://github.com/nicholasgross/googlefontdirectory-hg) (Mercurial-to-Git conversion of the original Google Font Directory)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `novaslim/src/`
+
+### Source Files in googlefontdirectory-hg
+
+- `NovaSlim.sfd` — FontForge source file (primary editable source)
+- `METADATA_comments.txt` — metadata notes (not a source file)
+
+The `.sfd` (FontForge) format is the only design source. This format is not buildable with gftools-builder.
+
+## Additional Repository Information
+
+- **Librefonts mirror**: https://github.com/librefonts/novaslim
   - Branch: `master`
   - Latest commit: `feafcbc2bc2477576ee6c71a812eda28cb25f538` (2014-10-17, "update .travis.yml")
   - Status: Frozen since 2014; not archived but no activity since then.
@@ -15,28 +28,14 @@
 
 - **Open Font Library**: https://fontlibrary.org (listed as source in original FONTLOG).
 
-## Source Files
-
-The `librefonts/novaslim` repo contains:
-- `src/NovaSlim.sfd` — FontForge source file (primary editable source)
-- `NovaSlim.ttf.*.ttx` — TTX-decomposed TTF tables (generated artifact)
-- `src/VERSIONS.txt`
-- `METADATA.json`, `FONTLOG.txt`, `OFL.txt`, `DESCRIPTION.en_us.html`
-
-The `.sfd` file is the authoritative source.
-
 ## Build System
 
-The repo uses the legacy `fontbakery-build.py` pipeline (circa 2014), driven by a `.travis.yml` CI config. This system is obsolete. No `Makefile` or modern build script is present.
-
-## config.yaml Status
-
-No `config.yaml` exists in the `librefonts/novaslim` repo or in `ofl/novaslim/` in google/fonts. One would need to be created for any rebuild attempt.
+The librefonts repo uses the legacy `fontbakery-build.py` pipeline (circa 2014), driven by a `.travis.yml` CI config. This system is obsolete. No `Makefile` or modern build script is present. No `config.yaml` exists.
 
 ## Notes
 
 - The Google Fonts binary (`NovaSlim.ttf`) corresponds to version 2.000 (2011).
 - The designer merged Nova Slim into Nova Round Slim in v3.x (2020), ending it as a standalone family. Per the wmk69/Nova FONTLOG v3.0.0: "Nova Slim is now Nova Round Slim, because I did slim versions of other fonts."
-- The `librefonts/novaslim` repo is the only available source for the v2.000 design.
+- The librefonts mirror and googlefontdirectory-hg are the only available sources for the v2.000 design.
 - Designer: Wojciech Kalinowski (wmk69), wmk69@o2.pl.
-- Confidence in source identification: **High** — the `librefonts` repo is the known Google Fonts upstream mirror and the commit matches what was previously recorded.
+- Confidence in source identification: **High** — the SFD source in googlefontdirectory-hg matches the librefonts mirror and the Google Fonts binary.
