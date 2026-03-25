@@ -1,38 +1,58 @@
-# Investigation: jsMath cmex10
+# Investigation Report: jsMath cmex10
 
-## Summary
+## Source Repository
 
 | Field | Value |
 |-------|-------|
-| Family Name | jsMath cmex10 |
-| Slug | jsmath-cmex10 |
-| License Dir | apache |
-| Repository URL | unknown |
-| Commit Hash | unknown |
-| Config YAML | none |
-| Status | no_config_possible |
-| Confidence | HIGH |
+| **Repository** | [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) |
+| **Commit** | `52f780bc9d197280a9f430574e179a5f233c56b6` |
+| **Source path** | `jsmathcmex10/src/` |
+| **Buildable** | No — no original design sources present |
 
-## Source Data (METADATA.pb)
+The googlefontdirectory-hg monorepo (a git mirror of the original Google Code Mercurial repository) contains a `jsmathcmex10/src/` directory with only:
 
-No source block
+- `METADATA_comments.txt` — metadata only, not a source file
 
-## Investigation
+No original design sources are present. The font was generated from MetaFont bitmap sources, not from standard font design files.
 
-The `apache/jsmathcmex10/` directory contains only `DESCRIPTION.en_us.html`, `jsMath-cmex10.ttf`, and `METADATA.pb`. There is no license text file.
+## Key Findings
 
-The METADATA.pb has no `source { }` block.
+| Field              | Value |
+|--------------------|-------|
+| Family Name        | jsMath cmex10 |
+| Designer           | Donald Knuth (Computer Modern) / jsMath project |
+| License            | Apache 2.0 |
+| Date Added         | 2010-12-20 |
+| Status             | no_config_possible |
+| Confidence         | HIGH |
 
-The copyright in the font's METADATA.pb reads: "Generated from MetaFont bitmap by mftrace 1.0.33, http://www.cs.uu.nl/~hanwen/mftrace/". The font is NOT compiled from standard font sources — it was generated from MetaFont using `mftrace`. The font is based on the Computer Modern extension font (`cmex10`) from Donald Knuth's Computer Modern family, used in TeX/LaTeX mathematics typesetting.
+## Investigation Details
 
-The jsMath cmex10 font provides mathematical extension symbols (large brackets, summation signs, etc.) for the jsMath JavaScript package. It was `date_added: "2010-12-20"`.
+### Current State in google/fonts
+
+- **Directory**: `apache/jsmathcmex10/`
+- **Files**: DESCRIPTION.en_us.html, jsMath-cmex10.ttf, METADATA.pb
+- **No source block** in METADATA.pb
+- **No license text file** in directory
+- **Copyright**: "Generated from MetaFont bitmap by mftrace 1.0.33, http://www.cs.uu.nl/~hanwen/mftrace/"
+
+### Origin and Build Process
+
+The font is based on the Computer Modern extension font (`cmex10`), which provides mathematical extension symbols (large brackets, summation signs, etc.) for TeX/LaTeX typesetting. It was generated from MetaFont (.mf) bitmap sources using the `mftrace` tool.
+
+The jsMath package (http://www.math.union.edu/locate/jsMath/) was a JavaScript-based mathematics rendering system that used these converted Computer Modern fonts. The font was one of the earliest Google Fonts additions (2010-12-20).
+
+### Git History in google/fonts
 
 The git history shows only metadata-only changes (language, classification updates) since the initial commit. No font file updates have been made.
 
-No repository for this font was found in the cache at `upstream_repos/fontc_crater_cache/`. The jsMath project predates modern git hosting, and the original font was distributed from the jsMath website. The `.mf` source files are part of the TeX/CTAN distribution.
+### Related Families
 
-This is one of six related jsMath Computer Modern families sharing the same origin (jsMath cmbx10, cmex10, cmmi10, cmr10, cmsy10, cmti10).
+This is one of six related jsMath Computer Modern families, all sharing the same MetaFont origin: jsMath cmbx10, cmex10, cmmi10, cmr10, cmsy10, cmti10.
 
 ## Conclusion
 
-No upstream git repository is known or likely to exist for this font. The font was generated from MetaFont sources and has no standard gftools-builder compatible source. No config.yaml is possible. Same status as all other jsMath CM families.
+No upstream git repository exists for this font. The font was generated from MetaFont sources via mftrace, a process that does not use standard gftools-builder compatible sources. The original .mf files reside in the TeX/CTAN distribution, not in any git repository. No config.yaml can be created.
+
+### Status: no_config_possible
+### Confidence: HIGH
