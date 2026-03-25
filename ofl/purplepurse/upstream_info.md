@@ -3,25 +3,32 @@
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-12
 
-## Summary
+## Source Repository
 
-No canonical upstream GitHub repository was found for Purple Purse. The FONTLOG lists only VFB source files. The Astigmatic GitHub account has no font repositories. No METADATA.pb changes were made.
+The `googlefontdirectory-hg` monorepo (the historical Google Font Directory Mercurial archive) contains files for this family.
+
+- **Repository**: `googlefontdirectory-hg`
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `purplepurse/src/`
+
+## Source Files
+
+The `purplepurse/src/` directory contains design sources in proprietary VFB format only, which cannot be built with gftools-builder:
+
+- **VFB** (FontLab, proprietary format, not buildable with gftools): PurplePurse-Regular-OTF.vfb, PurplePurse-Regular-TTF.vfb, PurplePurse-Regular.vfb
+- **OTF** (compiled binaries, not design sources): PurplePurse-Regular.otf
+
+## Buildability
+
+Not buildable with gftools-builder. The VFB sources are in FontLab's proprietary format. Conversion to UFO or Glyphs format would be required before a reproducible build pipeline could be established.
 
 ## Designer
 
 Brian J. Bonislawsky (astigma@astigmatic.com) for Astigmatic (AOETI). Website: www.astigmatic.com.
 
-## Repository Investigation
+## Investigation Details
 
-- **Checked cache**: `/mnt/shared/upstream_repos/fontc_crater_cache/` — no cached entry.
+- **Checked cache**: the upstream repo cache — no cached entry.
 - **GitHub search**: Searches for "Purple Purse font astigmatic" returned no relevant results.
 - **Astigmatic GitHub**: The GitHub user `astigmatic` exists but has only two placeholder repos (`astigmatic/pro`, `astigmatic/project1`) — no font source repositories.
 - **FONTLOG evidence**: The FONTLOG lists three VFB source files: `PurplePurse-Regular.vfb`, `PurplePurse-Regular-TTF.vfb`, and `PurplePurse-Regular-OTF.vfb`. No public repository is referenced.
-
-## Source Files
-
-Only FontLab VFB files are known to exist, as noted in FONTLOG.txt. These are proprietary format files and no open repository was found.
-
-## Verdict
-
-**No canonical upstream repository found.** The source exists only as proprietary VFB files with no public repository. No METADATA.pb changes were made.
