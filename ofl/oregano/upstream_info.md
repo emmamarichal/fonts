@@ -5,7 +5,29 @@
 
 ## Summary
 
-No canonical upstream repository with Glyphs or UFO sources was found. The only GitHub repository identified was `librefonts/oregano`, which is a librefonts mirror containing VFB (FontLab) source files. No designer-owned GitHub repository was found for Astigmatic (Brian J. Bonislawsky). No METADATA.pb changes were made.
+The original design sources for Oregano were found in the `googlefontdirectory-hg` monorepo. The sources are FontLab VFB files (proprietary format, not buildable with gftools-builder). No canonical designer-owned GitHub repository was found.
+
+## Source Repository
+
+- **Repo**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) (historical Google Font Directory Mercurial monorepo)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `oregano/src/`
+- **Buildable**: No — legacy formats only (.vfb)
+
+### Source Files
+
+| File | Format | Notes |
+|------|--------|-------|
+| `Oregano-Regular.vfb` | FontLab VFB | Original source with contour overlaps |
+| `Oregano-Regular-OTF.vfb` | FontLab VFB | Merged contours for OTF output |
+| `Oregano-Regular-TTF.vfb` | FontLab VFB | TrueType hinting adjustments |
+| `Oregano-Italic.vfb` | FontLab VFB | Original source with contour overlaps |
+| `Oregano-Italic-OTF.vfb` | FontLab VFB | Merged contours for OTF output |
+| `Oregano-Italic-TTF.vfb` | FontLab VFB | TrueType hinting adjustments |
+| `Oregano-Regular.otf` | Compiled binary | Not a design source |
+| `Oregano-Italic.otf` | Compiled binary | Not a design source |
+
+All design sources are in FontLab VFB format (proprietary binary). No UFO or Glyphs sources are available.
 
 ## Family Details
 
@@ -15,7 +37,7 @@ No canonical upstream repository with Glyphs or UFO sources was found. The only 
 - **Google Fonts date added**: 2012-08-13
 - **Copyright**: "Copyright (c) 2012 by Brian J. Bonislawsky DBA Astigmatic (AOETI) (astigma@astigmatic.com), with Reserved Font Name \"Oregano\""
 
-## Search Results
+## Investigation Details
 
 ### GitHub Search
 
@@ -27,21 +49,8 @@ No GitHub user account was found for "astigmatic", "AOETI", or "Bonislawsky". Th
 
 ### Librefonts Mirror
 
-The `librefonts/oregano` repository was found on GitHub. Its `src/` directory contains:
-- `Oregano-Regular.vfb` — original FontLab VFB source
-- `Oregano-Regular-OTF.vfb` — FontLab VFB with merged contours for OTF
-- `Oregano-Regular-TTF.vfb` — FontLab VFB with TrueType hinting adjustments
-- `Oregano-Italic.vfb` — original FontLab VFB source
-- `Oregano-Italic-OTF.vfb` — FontLab VFB with merged contours for OTF
-- `Oregano-Italic-TTF.vfb` — FontLab VFB with TrueType hinting adjustments
-- Various TTX decompiled OTF binary files
-
-This is a librefonts mirror, not a canonical designer-owned repository. The FONTLOG listed these exact 6 VFB source files as the original source files.
-
-## Cached Upstream Repos
-
-No cached clone was found in `/mnt/shared/upstream_repos/fontc_crater_cache/` for this family.
+The `librefonts/oregano` repository contains the same VFB source files as the googlefontdirectory-hg monorepo. This is a librefonts mirror, not a canonical designer-owned repository. The FONTLOG listed the 6 VFB source files as the original source files.
 
 ## Conclusion
 
-No canonical upstream repository with Glyphs or UFO sources exists for Oregano. The original sources were FontLab VFB files, preserved only in the librefonts mirror. No METADATA.pb changes were made.
+The original design sources for Oregano are preserved in the `googlefontdirectory-hg` monorepo as FontLab VFB files. These are proprietary binary files not buildable with gftools-builder. No modern sources or canonical designer-owned repository exist.
