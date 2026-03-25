@@ -1,10 +1,25 @@
+# Skranji -- Upstream Source Investigation
+
 **Model**: Claude Opus 4.6
 
-# Skranji — Upstream Source Investigation
+## Source Repository
 
-## Summary
+Design sources were found in the **googlefontdirectory-hg** archive (Google Font Directory, Mercurial-era).
 
-Skranji is a display typeface designed by Font Diner, Inc. (operating as Neapolitan, diner@fontdiner.com) and released in 2012. It was added to Google Fonts on 2012-08-21.
+- **Repository**: googlefontdirectory-hg
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `skranji/src/`
+
+## Source Files
+
+The source directory contains: 2 VFB files (FontLab, proprietary format).
+
+The VFB format is proprietary (FontLab) and cannot be built with gftools-builder. These sources are **not directly buildable** with the current open-source pipeline.
+
+### Key source files
+
+- `Skranji-Bold-TTF.vfb` (VFB, proprietary)
+- `Skranji-Regular-TTF.vfb` (VFB, proprietary)
 
 ## Designer
 
@@ -18,11 +33,3 @@ A search for canonical upstream repositories was conducted on GitHub. Searches f
 - **google-fonts-bower/skranji-bower** — a deprecated bower packaging mirror.
 
 No repository owned by Font Diner / Neapolitan containing UFO or Glyphs sources was found.
-
-## Status
-
-No canonical upstream repository with UFO or Glyphs sources was found. No source block was added.
-
-## Confidence
-
-Low — No public source repository was found for this commercial type foundry's contribution to Google Fonts.

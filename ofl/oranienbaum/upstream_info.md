@@ -5,7 +5,22 @@
 
 ## Summary
 
-No canonical upstream repository with Glyphs or UFO sources was found. The only GitHub repository identified was `librefonts/oranienbaum`, which is a librefonts mirror containing only TTX (decompiled binary) files — no original source files. No designer-owned GitHub repository was found for either Oleg Pospelov or Jovanny Lemonad under the Oranienbaum project. No METADATA.pb changes were made.
+The `googlefontdirectory-hg` monorepo contains an entry for Oranienbaum, but the only file in the source path (besides metadata) is a compiled OTF binary — no design sources are present. No canonical upstream repository with editable source files was found.
+
+## Source Repository
+
+- **Repo**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) (historical Google Font Directory Mercurial monorepo)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `oranienbaum/src/`
+- **Buildable**: No — no design sources present (compiled binary only)
+
+### Source Files
+
+| File | Format | Notes |
+|------|--------|-------|
+| `Oranienbaum-Regular.otf` | Compiled binary | Not a design source |
+
+No VFB, SFD, UFO, or Glyphs design sources are present.
 
 ## Family Details
 
@@ -15,7 +30,7 @@ No canonical upstream repository with Glyphs or UFO sources was found. The only 
 - **Google Fonts date added**: 2012-08-20
 - **Copyright**: "Copyright (c) 2012, Oleg Pospelov (oleg@pospelov.com), Jovanny Lemonad (lemonad@jovanny.ru), with Reserved Font Name 'Oranienbaum'"
 
-## Search Results
+## Investigation Details
 
 ### GitHub Search
 
@@ -29,12 +44,8 @@ GitHub was searched for "Oranienbaum", "Oranienbaum font", and "Oranienbaum Posp
 
 ### Librefonts Mirror
 
-The `librefonts/oranienbaum` repository contains only TTX (decompiled binary XML) files — there are no original source files (no SFD, VFB, UFO, or Glyphs files). The `src/` directory contains only TTX decompilations of OTF and TTF binaries, plus a `VERSIONS.txt` and metadata comments file. The repository was last updated in October 2014.
-
-## Cached Upstream Repos
-
-No cached clone was found in `/mnt/shared/upstream_repos/fontc_crater_cache/` for this family.
+The `librefonts/oranienbaum` repository contains only TTX (decompiled binary XML) files — there are no original source files (no SFD, VFB, UFO, or Glyphs files). The repository was last updated in October 2014.
 
 ## Conclusion
 
-No canonical upstream repository exists for Oranienbaum. The original sources (likely FontLab VFB given the 2012 timeframe) were never published to a public repository. The librefonts mirror contains only decompiled TTX files, not usable design sources. No METADATA.pb changes were made.
+No design sources exist for Oranienbaum in either the `googlefontdirectory-hg` monorepo or any public repository. The original sources (likely FontLab VFB given the 2012 timeframe) were never published. The librefonts mirror contains only decompiled TTX files.

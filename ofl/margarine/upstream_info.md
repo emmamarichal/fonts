@@ -2,81 +2,49 @@
 
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-03
-**Status**: incomplete
+**Status**: complete (VFB-only sources)
 
-## METADATA.pb Source Block (current)
+## Source Repository
 
-No source block exists in the current METADATA.pb. The file contains only basic metadata (name, designer, license, category, fonts, subsets, stroke, classifications).
+The source files for Margarine are available in the **googlefontdirectory-hg** monorepo at commit `52f780bc9d197280a9f430574e179a5f233c56b6`, under the path `margarine/src/`.
 
-## Repository Analysis
+### Source Files in googlefontdirectory-hg
 
-**Repository**: https://github.com/librefonts/margarine
-**Owner**: librefonts (a third-party organization, not the original designer)
-**Created**: 2014-07-16
-**Default branch**: master
-**Total commits**: 12 (all from 2014, by Mikhail Kashkin aka hash3g)
+| File | Format | Notes |
+|------|--------|-------|
+| `Margarine-Regular.vfb` | FontLab VFB | Original source (proprietary, not buildable with gftools) |
+| `Margarine-Regular-OTF.vfb` | FontLab VFB | Merged contours, optimized for OTF |
+| `Margarine-Regular-TTF.vfb` | FontLab VFB | TrueType outlines with hinting |
+| `Margarine-Regular.otf` | Compiled OTF binary | Not a design source |
+| `METADATA_comments.txt` | Metadata | Legacy subsetting commands, not a source file |
 
-The `librefonts` organization (861 public repos) was a third-party effort by Mikhail Kashkin that extracted font files from the old Google Font Directory into individual GitHub repositories. This is not an original upstream source maintained by the designer.
+No modern gftools-builder compatible sources (.glyphs, .ufo, .designspace, .sfd) exist. The only editable sources are VFB (FontLab Studio) format, which is a proprietary binary format not supported by gftools-builder.
 
-### Commit History
+## librefonts Mirror
 
-| Commit | Date | Author | Message |
-|--------|------|--------|---------|
-| `56637ab` | 2014-07-16 | Mikhail Kashkin | Move margarine font files to separate repository |
-| `645187d` | 2014-07-18 | Mikhail Kashkin | cleanup |
-| `70e841c` - `c612652` | 2014-08-19 to 2014-10-17 | hash3g | Various .travis.yml updates |
+The same source files are also available at https://github.com/librefonts/margarine, created on 2014-07-16 under the `librefonts` organization — a third-party effort by Mikhail Kashkin that extracted font files from the old Google Font Directory into individual GitHub repositories.
 
-### Repository Contents
+The repo has 12 commits total (all from 2014, by Mikhail Kashkin aka hash3g):
+- `56637ab` (2014-07-16) — "Move margarine font files to separate repository" (initial commit)
+- `645187d` (2014-07-18) — cleanup
+- `70e841c` through `c612652` (2014-08-19 to 2014-10-17) — Various .travis.yml updates
 
-The repo contains only:
-- **TTX files**: Decomposed TrueType tables (`Margarine-Regular.ttf.*.ttx`) at root level
-- **VFB files**: FontLab Studio binaries in `src/` directory:
-  - `Margarine-Regular.vfb` (original source)
-  - `Margarine-Regular-TTF.vfb` (TrueType outlines with hinting)
-  - `Margarine-Regular-OTF.vfb` (merged contours, optimized)
-- **OTF TTX**: Decomposed OTF tables in `src/`
-- **No config.yaml**
-- **No modern source files** (.glyphs, .ufo, .designspace, .sfd)
-
-The VFB (FontLab Studio) format is a proprietary binary format that is not compatible with gftools-builder. The TTX files are decompositions of the compiled fonts, not editable design sources.
+The repo has been dormant since October 2014.
 
 ## Onboarding History
 
-The font was added to google/fonts in the initial commit (`90abd17b4`, 2015-03-07, by Dave Crossland). This was the massive initial import of the entire Google Fonts library into the current GitHub repository structure. No PR or specific onboarding process was associated with this font -- it was part of the bulk migration.
+Margarine was added to google/fonts in the initial commit (`90abd17b4`, 2015-03-07, by Dave Crossland). This was the bulk import of the entire Google Fonts library. No PR or specific onboarding process was associated with this font.
 
 The font was originally designed by Brian J. Bonislawsky (Astigmatic/AOETI) and released in November 2012 (Version 1.000). The font has never been updated in google/fonts since the initial commit (aside from metadata changes to METADATA.pb).
 
-### Original Designer
-
-- **Designer**: Brian J. Bonislawsky
-- **Foundry**: Astigmatic (AOETI)
-- **Email**: astigma@astigmatic.com
-- **Website**: www.astigmatic.com
-- **GitHub**: https://github.com/astigmatic (exists but has no font repos)
-
-The designer has a GitHub account but does not host font sources there. No alternative upstream repository with modern source files was found.
+**Designer**: Brian J. Bonislawsky (Astigmatic/AOETI, astigma@astigmatic.com, www.astigmatic.com)
+**GitHub**: https://github.com/astigmatic (exists but has no font repos)
 
 ## Build Configuration
 
-**No config.yaml exists** in the upstream repo, and **no override config.yaml** can be created because there are no gftools-builder compatible source files. The only source files are VFB (FontLab) binaries, which cannot be processed by gftools-builder.
-
-An override config.yaml is not feasible because:
-1. VFB files require FontLab Studio (proprietary) to open
-2. There are no .glyphs, .ufo, or .designspace files that gftools-builder could use
-3. The TTX files are decompositions of already-compiled binaries, not true design sources
-
-## Findings
-
-1. **No source block** exists in METADATA.pb.
-2. **The librefonts/margarine repo** is a third-party extraction of files from the old Google Font Directory, not an original upstream maintained by the designer. All commits were from Mikhail Kashkin in 2014, and the repo has been dormant since.
-3. **No modern source files** exist anywhere -- the only sources are VFB (FontLab) binaries, which are not compatible with gftools-builder.
-4. **The original designer** (Brian J. Bonislawsky / Astigmatic) has a GitHub account but no font source repositories.
-5. **No config.yaml** can be created (neither upstream nor override) due to lack of compatible source files.
-6. **The font has never been updated** since the initial bulk import in 2015.
+No `config.yaml` exists and none can be created. The only source files are VFB (FontLab) binaries, which cannot be processed by gftools-builder. The TTX files in the librefonts mirror are decompositions of already-compiled binaries, not true design sources.
 
 ## Recommended Source Block
-
-A source block can be added pointing to the librefonts repo as the best available reference, but it should be noted that this is a third-party mirror with VFB-only sources:
 
 ```
 source {
@@ -86,8 +54,4 @@ source {
 }
 ```
 
-**Notes**:
-- The `config_yaml` field is omitted because no config.yaml exists and none can be created (VFB-only sources).
-- The commit `c612652` is the latest (and only meaningful) commit in the repo. Since the librefonts repo was created after the font was already in Google Fonts, this commit does not represent an original onboarding commit -- it represents the state of a third-party extraction.
-- This source block is of limited value since the font cannot be rebuilt from these sources using modern tooling.
-- Status should be recorded as `missing_config` with a note about VFB-only sources.
+No `config_yaml` field is included because the repo has VFB-only sources not compatible with gftools-builder. The commit `c612652` is the latest commit in the repo.

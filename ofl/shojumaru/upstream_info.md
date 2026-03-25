@@ -1,12 +1,32 @@
-# Shojumaru — Upstream Source Investigation
+# Shojumaru -- Upstream Source Investigation
 
-**Designer**: Astigmatic
 **Model**: Claude Opus 4.6
-**Date**: 2026-03-12
 
-## Summary
+## Source Repository
 
-No canonical upstream repository with font sources was found for Shojumaru on GitHub. The font was designed by Brian J. Bonislawsky DBA Astigmatic (AOETI). Searches for both the font name and the designer found no relevant repositories with source files.
+Design sources were found in the **googlefontdirectory-hg** archive (Google Font Directory, Mercurial-era).
+
+- **Repository**: googlefontdirectory-hg
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `shojumaru/src/`
+
+## Source Files
+
+The source directory contains: 3 VFB files (FontLab, proprietary format); 1 SFD file (FontForge format); 1 compiled binary (OTF/TTF, not design sources).
+
+Neither VFB (FontLab, proprietary) nor SFD (FontForge) formats are supported by gftools-builder. These sources are **not directly buildable** with the current open-source pipeline.
+
+### Key source files
+
+- `Shojumaru-Regular-OTF.vfb` (VFB, proprietary)
+- `Shojumaru-Regular-TTF.vfb` (VFB, proprietary)
+- `Shojumaru-Regular.vfb` (VFB, proprietary)
+- `Shojumaru-Regular-TTF.sfd` (SFD, FontForge)
+- `Shojumaru-Regular.otf` (compiled binary)
+
+## Designer
+
+Astigmatic
 
 ## Search Results
 
@@ -15,7 +35,3 @@ No canonical upstream repository with font sources was found for Shojumaru on Gi
 - Searched `astigmatic font in:name,description`: found only `googlefonts/SacramentoFont`
 - Checked GitHub user `astigmatic`: only two unrelated repositories found
 - `librefonts/shojumaru` skipped (mirror, not canonical source)
-
-## Outcome
-
-No source block was added to METADATA.pb. No public source repository with original design files was found for this font.

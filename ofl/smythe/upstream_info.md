@@ -1,10 +1,24 @@
+# Smythe -- Upstream Source Investigation
+
 **Model**: Claude Opus 4.6
 
-# Smythe — Upstream Source Investigation
+## Source Repository
 
-## Summary
+Design sources were found in the **googlefontdirectory-hg** archive (Google Font Directory, Mercurial-era).
 
-Smythe is a display typeface designed by Vernon Adams (vern@newtypography.co.uk) and released in 2011. It was added to Google Fonts on 2011-04-20.
+- **Repository**: googlefontdirectory-hg
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `smythe/src/`
+
+## Source Files
+
+The source directory contains: 1 SFD file (FontForge format).
+
+The SFD format (FontForge) is not supported by gftools-builder. These sources are **not directly buildable** with the current open-source pipeline.
+
+### Key source files
+
+- `Smythe-Regular.sfd` (SFD, FontForge)
 
 ## Designer
 
@@ -17,11 +31,3 @@ A search for canonical upstream repositories was conducted on GitHub. Searches f
 - **librefonts/smythe** — a librefonts mirror (excluded per policy).
 
 No repository owned by Vernon Adams containing UFO or Glyphs sources was found. Vernon Adams passed away in 2014; his work is preserved via Google Fonts.
-
-## Status
-
-No canonical upstream repository with UFO or Glyphs sources was found. No source block was added.
-
-## Confidence
-
-Low — No public source repository was found. The font predates widespread open-source font hosting and the original creator is deceased.

@@ -3,43 +3,52 @@
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-12
 
-## Repository
+## Source Repository
 
-- **URL**: https://github.com/librefonts/miniver
-- **Owner**: librefonts (archival/mirror org)
-- **Latest commit**: `b301973d6822dc2661ce510355b4d7f9ed573926`
-- **Commit date**: 2014-10-17
-- **Commit message**: `update .travis.yml`
-- **Default branch**: `master`
+The original design sources for Miniver are preserved in the **googlefontdirectory-hg** monorepo, a git mirror of the original Google Code Mercurial repository that was the canonical host for Google Fonts from 2010 to 2013.
 
-The repository is under the `librefonts` GitHub organization, which hosts archival copies of older free/libre fonts. The FONTLOG confirms this is the correct source: "Designed by Dathan Boardman of Open Window" with contact `dathanboardman@gmail.com`, matching the copyright in METADATA.pb exactly.
+- **Repository**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `ofl/miniver/src/`
 
-No canonical repository by the designer (Open Window / Dathan Boardman) was found — the `librefonts` copy appears to be the only known upstream source on GitHub.
+### Source files
 
-## Source Files
+| File | Format | Buildable |
+|------|--------|-----------|
+| `Miniver-Regular-TTF.vfb` | FontLab VFB | No (proprietary) |
+| `METADATA_comments.txt` | Metadata notes | N/A |
 
-The `src/` directory contains:
-
-- `src/Miniver-Regular-TTF.vfb` — FontLab Studio source file (63 KB)
-- `src/VERSIONS.txt` — version history
-- `src/METADATA_comments.txt` — notes on metadata
-
-The repo root also contains TTX decompositions of the built font:
-- `Miniver-Regular.ttf.ttx` (main TTX)
-- Multiple per-table TTX files (`_g_l_y_f`, `_h_m_t_x`, `_n_a_m_e`, etc.)
+Only one design source is present: a FontLab VFB file (63 KB) optimized for TTF output. No UFO, Glyphs, SFD, or other modern buildable sources are available.
 
 ## Build System
 
-A `.travis.yml` CI configuration file is present, suggesting an automated build was attempted at some point. However, there is no Makefile or build script in the repository. The source format is FontLab VFB (proprietary binary). No open build pipeline exists.
+No modern build system (gftools builder, fontmake) is available. The VFB format is proprietary (FontLab Studio) and requires conversion before modern tooling can be used.
 
 ## config.yaml Status
 
-No `config.yaml` exists in the upstream repo or in the `ofl/miniver/` directory in google/fonts.
+No `config.yaml` exists. One cannot be created without converting the VFB source to a modern format (UFO or Glyphs).
+
+## Designer & History
+
+- **Designer**: Dathan Boardman (Open Window)
+- **Contact**: dathanboardman@gmail.com
+- **FONTLOG**: Confirms "Designed by Dathan Boardman of Open Window", matching the copyright in METADATA.pb exactly.
+
+No canonical repository by the designer was found on GitHub.
+
+## Additional Repository
+
+A copy also exists in the `librefonts` GitHub organization:
+
+- **URL**: https://github.com/librefonts/miniver
+- **Latest commit**: `b301973d6822dc2661ce510355b4d7f9ed573926` (2014-10-17, "update .travis.yml")
+- **Default branch**: `master`
+
+The repo has been dormant since October 2014. It contains TTX decompositions of the built font in the root directory and uses an obsolete Travis CI configuration.
 
 ## Notes
 
-- The repository has been dormant since October 2014.
-- The source format is FontLab VFB — a proprietary binary format with no open toolchain support. Migration to UFO or Glyphs would be required before a modern gftools build pipeline could be established.
+- The VFB source format is proprietary and requires FontLab Studio or conversion to UFO for modern tooling.
 - No evidence of an authoritative repository from the original designer (Open Window / Dathan Boardman) was found on GitHub.
-- The `librefonts` organization appears to have archived this font as-is; it is unlikely to receive further upstream development.
-- Confidence in repo identification: **High** — FONTLOG text, designer name, email, and font name all match the METADATA.pb.
+- The `librefonts` organization archived this font as-is; it is unlikely to receive further upstream development.
+- Confidence in source identification: High — FONTLOG text, designer name, email, and font name all match the METADATA.pb.

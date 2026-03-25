@@ -3,46 +3,47 @@
 **Model**: Claude Opus 4.6
 **Date**: 2026-03-12
 
-## Repository
+## Source Repository
 
-The best available upstream source for Nixie One is the **librefonts** organization mirror on GitHub:
+- **Repository**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) (Mercurial monorepo, pre-GitHub era)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `ofl/nixieone/src/`
+- **Buildable**: No — legacy formats only (.sfd)
 
-- **Repository**: https://github.com/librefonts/nixieone
-- **Designer**: Jovanny Lemonad (lemonad@jovanny.ru, https://jovanny.ru/)
-- **Default branch**: master
-- **Latest commit**: `14c80bdf78aae3412c98eaea215fa8a1fa2ca993` (2014-10-17), message: "update .travis.yml"
-- **Last pushed**: 2014-10-17
+The font sources are in the **googlefontdirectory-hg** monorepo, a git mirror of the
+original Google Code Mercurial repository (`code.google.com/p/googlefontdirectory`)
+that was the canonical host for Google Fonts from 2010 to 2013.
 
-No official repository maintained by Jovanny Lemonad (the designer) was found on GitHub. A search for his name and common aliases returned no relevant matches. The designer's website `jovanny.ru` is unreachable (connection refused). The `librefonts` organization on GitHub hosted a collection of Google Fonts source files circa 2014; this appears to be the closest available canonical source.
-
-## Source Files
-
-The `librefonts/nixieone` repository contains the following source files under `src/`:
+### Source Files
 
 | File | Type |
 |------|------|
-| `src/NixieOne-Regular-TTF.sfd` | FontForge source (TTF workflow, ~406 KB) |
-| `src/NixieOne-Regular.otf.*` + `.ttx` | TTX table dumps from OTF |
-| `src/VERSIONS.txt` | Records version 1.004 |
+| `NixieOne-Regular-TTF.sfd` | FontForge SFD source (not buildable with gftools-builder) |
+| `NixieOne-Regular.otf` | Compiled OTF binary (not a design source) |
+| `METADATA_comments.txt` | Metadata comments (not a source file) |
 
-The root of the repository also contains the full TTX decomposition of the TTF (`NixieOne-Regular.ttf.*.ttx`).
+The SFD file is the only editable source. It is a FontForge format file, not compatible with gftools-builder.
 
-The font in Google Fonts is Version 1.004 (confirmed from binary name table), which exactly matches the version in `src/VERSIONS.txt`.
+## Designer and Provenance
 
-Note: Nixie One is a single-weight family (Regular only); no italic or bold sources exist in the repository.
+- **Designer**: Jovanny Lemonad (`lemonad@jovanny.ru`, jovanny.ru)
+- The designer's website `jovanny.ru` is currently unreachable (ECONNREFUSED).
+- No official repository maintained by the designer was found on GitHub. Jovanny Lemonad designed several other Google Fonts (e.g., Philosopher, Yeseva One); some have GitHub repos under `alexeiva/` but no Nixie One repo was found.
+
+## Additional Mirror
+
+A third-party mirror exists at https://github.com/librefonts/nixieone (latest commit `14c80bd` on 2014-10-17, "update .travis.yml"). It contains the same SFD source plus TTX decompilations. The `src/VERSIONS.txt` records version 1.004, matching the Google Fonts binary.
 
 ## Build System
 
-No Makefile, build script, or automated build system is present in the repository. The `.travis.yml` file exists (last touched in the final commit of 2014). The source workflow appears to be a manual FontForge export from the `.sfd` file.
+Not applicable — the SFD source requires FontForge and is not compatible with the modern gftools-builder pipeline.
 
-## config.yaml Status
+## config.yaml
 
-No `config.yaml` exists. The family is single-weight and has no variable font potential apparent from the source. Given the designer's website is offline and no active maintainer is known, the font is unlikely to receive upstream updates.
+Does not exist. Cannot be created — no gftools-builder compatible sources available.
 
 ## Notes
 
-- The designer's personal website (`jovanny.ru`) is currently unreachable (ECONNREFUSED).
-- Jovanny Lemonad designed several other Google Fonts (e.g., Philosopher, Yeseva One), and some of those have GitHub repos under `alexeiva/` — but no Nixie One repo was found under that or any other account.
-- The `librefonts/nixieone` repo is the best available source and the version matches what Google Fonts ships (1.004).
-- The SFD file (`NixieOne-Regular-TTF.sfd`) is the practical source for rebuilding the TTF.
+- The font in Google Fonts is Version 1.004, matching `VERSIONS.txt` in the librefonts mirror.
+- Nixie One is a single-weight family (Regular only); no italic or bold sources exist.
 - **Confidence**: Medium-High. The librefonts mirror matches the shipped version exactly; however, it is not a designer-maintained repository.

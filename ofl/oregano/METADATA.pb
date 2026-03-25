@@ -26,3 +26,7 @@ subsets: "latin"
 subsets: "latin-ext"
 classifications: "DISPLAY"
 classifications: "HANDWRITING"
+source {
+  repository_url: "https://github.com/googlefonts/googlefontdirectory-hg"
+  commit: "52f780bc9d197280a9f430574e179a5f233c56b6"
+}

@@ -1,40 +1,35 @@
-# Alef
+# Alef -- Source Investigation
 
-**Status**: `no_upstream_repo`
+**Model**: Claude Opus 4.6
 **Date**: 2026-02-25
-**Designer**: Hagilda, Mushon Zer-Aviv
-**License**: OFL
-**METADATA.pb**: `ofl/alef/METADATA.pb`
 
-## Data
+## Source Repository
 
-| Field | Value |
-|-------|-------|
-| Repository URL | — |
-| Commit | unknown |
-| Config YAML | — |
+**Repository**: [googlefontdirectory-hg](https://code.google.com/archive/p/googlefontdirectory/) (Mercurial monorepo)
+**Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+**Source path**: `alef/src/`
 
-## Methodology
+### Source Files in googlefontdirectory-hg
 
-### Repository URL
-No upstream repository URL found.
+| File | Format | Buildable |
+|------|--------|-----------|
+| `METADATA_comments.txt` | Metadata | N/A |
 
-### Commit Hash
-Commit hash unknown — could not be determined.
+The `src/` directory contains only `METADATA_comments.txt` -- no original design sources (no `.glyphs`, `.ufo`, `.designspace`, `.sfd`, or `.vfb` files). The compiled font binaries were provided without editable sources.
 
-### Config YAML
-Not applicable — no upstream repository exists.
+## Designer
 
-## Evidence
+Hagilda, Mushon Zer-Aviv. Licensed under OFL.
 
-### METADATA.pb source block
-No source block present in METADATA.pb.
+## google/fonts History
 
-### google/fonts history
-- Last font modification: `351666924b11`
-- Date: 2017-05-01 18:18:17 +0100
-- Subject: "hotfix-alef: v1.002 added (#748)"
+- **Initial addition**: Part of the initial commit (`90abd17b`) to google/fonts on 2015-03-07
+- **Last font modification**: Commit `351666924b11` (2017-05-01) -- "hotfix-alef: v1.002 added (#748)"
 
-## Confidence
+The font has not been updated since the 2017 hotfix.
 
-**High**: No upstream repository exists for this family.
+## Build Configuration
+
+- **No config.yaml** exists in any known repository
+- **No override config.yaml** exists in the google/fonts family directory
+- No buildable design sources are available, so a config.yaml cannot be created

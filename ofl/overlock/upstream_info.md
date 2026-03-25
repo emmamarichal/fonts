@@ -5,32 +5,56 @@
 
 ## Summary
 
-Overlock is a display sans-serif designed by Dario Manuel Muhafara of TIPO digital typefoundry (Buenos Aires, Argentina). It was added to Google Fonts on 2011-12-19.
+Overlock is a display sans-serif designed by Dario Manuel Muhafara of TIPO digital typefoundry (Buenos Aires, Argentina). The original design sources were found in the `googlefontdirectory-hg` monorepo in FontLab VFB and FontForge SFD formats, which are not buildable with gftools-builder. No canonical designer-owned repository was found.
 
-## Designer
+## Source Repository
 
-Dario Manuel Muhafara operates the TIPO digital typefoundry at tipo.net.ar. The foundry primarily offers proprietary commercial typefaces. No personal GitHub account for Muhafara was found.
+- **Repo**: [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) (historical Google Font Directory Mercurial monorepo)
+- **Commit**: `52f780bc9d197280a9f430574e179a5f233c56b6`
+- **Source path**: `overlock/src/`
+- **Buildable**: No — legacy formats only (.vfb/.sfd)
 
-## Upstream Repository Search
+### Source Files
 
-The following repositories were identified during the investigation:
+The family has 6 styles (Regular, Italic, Bold, Bold Italic, Black, Black Italic). Each style has a primary VFB source, an OTF-specific VFB, and an SFD for TrueType output.
 
-- **librefonts/overlock** (https://github.com/librefonts/overlock) — This repository belongs to the `librefonts` GitHub organization, which functions as a mirror/archive for open-source fonts. It is NOT a designer-owned canonical repo. The `src/` folder contains `.vfb` (FontLab VFB) and `.sfd` (FontForge SFD) files along with TTX dumps. No UFO or Glyphs sources were found.
+**Design sources (VFB — FontLab, proprietary binary):**
+- `Overlock-Regular.vfb`, `Overlock-Regular-OTF.vfb`
+- `Overlock-Italic.vfb`, `Overlock-Italic-OTF.vfb`
+- `Overlock-Bold.vfb`, `Overlock-Bold-OTF.vfb`
+- `Overlock-BoldItalic.vfb`, `Overlock-BoldItalic-OTF.vfb`
+- `Overlock-Black.vfb`, `Overlock-Black-OTF.vfb`
+- `Overlock-BlackItalic.vfb`, `Overlock-BlackItalic-OTF.vfb`
 
-No GitHub account for Dario Manuel Muhafara was found. The TIPO foundry website (tipo.net.ar) does not link to any source repositories and presents its fonts as proprietary commercial work.
+**TrueType hinting variants (SFD — FontForge):**
+- `Overlock-Regular-TTF.sfd`, `Overlock-Italic-TTF.sfd`, `Overlock-Bold-TTF.sfd`
+- `Overlock-BoldItalic-TTF.sfd`, `Overlock-Black-TTF.sfd`, `Overlock-BlackItalic-TTF.sfd`
 
-## Source File Analysis (librefonts/overlock)
+**Compiled binaries (not design sources):**
+- `Overlock-Regular-OTF.otf`, `Overlock-Italic-OTF.otf`, `Overlock-Bold-OTF.otf`
+- `Overlock-BoldItalic-OTF.otf`, `Overlock-Black-OTF.otf`, `Overlock-BlackItalic-OTF.otf`
 
-The `src/` folder contains:
-- `Overlock-*.vfb` — FontLab VFB source files (proprietary binary format)
-- `Overlock-*-TTF.sfd` — FontForge SFD source files
-- `Overlock-*-OTF.vfb` / `.otf.*.ttx` — OTF build artifacts
+No UFO or Glyphs sources are available.
 
-No UFO or Glyphs source files were found. The highest-quality open source format present is SFD.
+## Family Details
+
+- **Designer**: Dario Manuel Muhafara (TIPO digital typefoundry)
+- **License**: OFL
+- **Google Fonts date added**: 2011-12-19
+
+## Investigation Details
+
+### Designer Profile
+
+Dario Manuel Muhafara operates the TIPO digital typefoundry at tipo.net.ar. The foundry primarily offers proprietary commercial typefaces. No personal GitHub account for Muhafara was found. The TIPO foundry website does not link to any source repositories.
+
+### Librefonts Mirror
+
+The `librefonts/overlock` repository (https://github.com/librefonts/overlock) is a librefonts organization mirror containing the same VFB and SFD source files. It is not the designer's own repository.
 
 ## Conclusion
 
-No canonical designer-owned upstream repository was found for Overlock. The only GitHub source is the `librefonts/overlock` mirror, which contains VFB and SFD files (no UFO or Glyphs sources). No METADATA.pb source block was added.
+The original design sources for Overlock are preserved in the `googlefontdirectory-hg` monorepo as VFB and SFD files. These are legacy formats not buildable with gftools-builder. No modern sources or canonical designer-owned repository exist.
 
 ## References
 
