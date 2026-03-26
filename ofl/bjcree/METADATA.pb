@@ -69,3 +69,4 @@ source {
   branch: "main"
 }
 stroke: "SERIF"
+primary_script: "Cans"
