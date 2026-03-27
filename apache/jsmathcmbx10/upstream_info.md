@@ -1,38 +1,58 @@
-# Investigation: jsMath cmbx10
+# Investigation Report: jsMath cmbx10
 
-## Summary
+## Source Repository
 
 | Field | Value |
 |-------|-------|
-| Family Name | jsMath cmbx10 |
-| Slug | jsmath-cmbx10 |
-| License Dir | apache |
-| Repository URL | unknown |
-| Commit Hash | unknown |
-| Config YAML | none |
-| Status | no_config_possible |
-| Confidence | HIGH |
+| **Repository** | [googlefontdirectory-hg](https://github.com/googlefonts/googlefontdirectory-hg) |
+| **Commit** | `52f780bc9d197280a9f430574e179a5f233c56b6` |
+| **Source path** | `jsmathcmbx10/src/` |
+| **Buildable** | No — no original design sources present |
 
-## Source Data (METADATA.pb)
+The googlefontdirectory-hg monorepo (a git mirror of the original Google Code Mercurial repository) contains a `jsmathcmbx10/src/` directory with only:
 
-No source block
+- `METADATA_comments.txt` — metadata only, not a source file
 
-## Investigation
+No original design sources are present. The font was generated from MetaFont bitmap sources, not from standard font design files.
 
-The `apache/jsmathcmbx10/` directory contains only `DESCRIPTION.en_us.html`, `jsMath-cmbx10.ttf`, and `METADATA.pb`. There is no license text file (no APACHE2.txt or similar).
+## Key Findings
 
-The METADATA.pb has no `source { }` block.
+| Field              | Value |
+|--------------------|-------|
+| Family Name        | jsMath cmbx10 |
+| Designer           | Donald Knuth (Computer Modern) / jsMath project |
+| License            | Apache 2.0 |
+| Date Added         | 2010-12-20 |
+| Status             | no_config_possible |
+| Confidence         | HIGH |
 
-The copyright in the font's METADATA.pb reads: "Generated from MetaFont bitmap by mftrace 1.0.33, http://www.cs.uu.nl/~hanwen/mftrace/". The font is NOT compiled from standard font sources (`.glyphs`, `.ufo`, `.designspace`) — it was generated from a MetaFont bitmap using the `mftrace` tool. MetaFont is the typesetting system used by TeX/LaTeX; the original sources are `.mf` files from the Computer Modern font family designed by Donald Knuth.
+## Investigation Details
 
-The jsMath package (http://www.math.union.edu/locate/jsMath/) was a JavaScript-based mathematics rendering system that used these fonts. The font was `date_added: "2010-12-20"` (one of the earliest Google Fonts additions).
+### Current State in google/fonts
 
-The git history for `apache/jsmathcmbx10/` shows only metadata-only changes since the initial commit, going back through language cleanup commits and an "Initial commit" baseline. The fonts were added very early in the google/fonts repository history.
+- **Directory**: `apache/jsmathcmbx10/`
+- **Files**: DESCRIPTION.en_us.html, jsMath-cmbx10.ttf, METADATA.pb
+- **No source block** in METADATA.pb
+- **No license text file** in directory
+- **Copyright**: "Generated from MetaFont bitmap by mftrace 1.0.33, http://www.cs.uu.nl/~hanwen/mftrace/"
 
-No jsMath repository was found in the cache at `upstream_repos/fontc_crater_cache/`. The jsMath project predates GitHub; the original fonts were distributed from the jsMath project website. The source is MetaFont (`.mf`) files from the TeX distribution (CTAN), which do not form a standard gftools-builder compatible source.
+### Origin and Build Process
 
-This family is one of six related jsMath Computer Modern families: jsMath cmbx10, jsMath cmex10, jsMath cmmi10, jsMath cmr10, jsMath cmsy10, jsMath cmti10. All six share the same origin.
+The font was NOT compiled from standard font sources (.glyphs, .ufo, .designspace). It was generated from MetaFont (.mf) bitmap sources using the `mftrace` tool, which traces MetaFont bitmaps into outline fonts. The original .mf sources are Donald Knuth's Computer Modern Bold Extended font (`cmbx10`), distributed as part of the TeX/CTAN ecosystem.
+
+The jsMath package (http://www.math.union.edu/locate/jsMath/) was a JavaScript-based mathematics rendering system that used these converted Computer Modern fonts. The font was one of the earliest Google Fonts additions (2010-12-20).
+
+### Git History in google/fonts
+
+The git history shows only metadata-only changes since the initial commit. No font file updates have been made.
+
+### Related Families
+
+This is one of six related jsMath Computer Modern families, all sharing the same MetaFont origin: jsMath cmbx10, cmex10, cmmi10, cmr10, cmsy10, cmti10. All six represent legacy fonts with no modern build pipeline.
 
 ## Conclusion
 
-No upstream git repository is known or likely to exist for this font. The font was generated from MetaFont sources — not from standard gftools-builder compatible sources. No config.yaml is possible. This family, along with the other five jsMath CM variants, represents a special case of legacy fonts with no modern build pipeline.
+No upstream git repository exists for this font. The font was generated from MetaFont sources via mftrace, a process that does not use standard gftools-builder compatible sources. The original .mf files reside in the TeX/CTAN distribution, not in any git repository. No config.yaml can be created.
+
+### Status: no_config_possible
+### Confidence: HIGH

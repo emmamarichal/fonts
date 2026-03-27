@@ -1,0 +1,10 @@
+# New
+# ofl/bjcree # https://github.com/google/fonts/pull/10383 (has contradictory font category and stroke info. Category is Sans Serif but stroke is Serif)
+ofl/mirandasans # https://github.com/google/fonts/pull/10211
+ofl/sairastencil # https://github.com/google/fonts/pull/10366
+
+# Upgrade
+ofl/coustard # https://github.com/google/fonts/pull/10367
+
+# Designer profile
+catalog/designers/renebieder # https://github.com/google/fonts/pull/10382

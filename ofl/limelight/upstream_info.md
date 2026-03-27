@@ -2,9 +2,23 @@
 
 **Model**: Claude Opus 4.6
 
+## Source Repository
+
+The original design sources for Limelight are preserved in the **googlefontdirectory-hg** Mercurial monorepo at commit `52f780bc9d197280a9f430574e179a5f233c56b6`, under the path `limelight/src/`.
+
+### Source Files in googlefontdirectory-hg
+
+- `Limelight-Regular.vfb` -- FontLab binary source (proprietary, not buildable with gftools-builder)
+- `Limelight-Regular-OTF.sfd` -- FontForge SFD file (legacy, not buildable with gftools-builder)
+- `Limelight-Regular-TTF.sfd` -- FontForge SFD file (legacy, not buildable with gftools-builder)
+- `Limelight-Regular.otf` -- compiled OTF binary, not a design source
+- `METADATA_comments.txt` -- metadata file, not a design source
+
+The design sources are in VFB and SFD legacy formats only. No `.glyphs`, `.ufo`, or `.designspace` files are present. These formats are not compatible with gftools-builder.
+
 ## Summary
 
-Limelight is a display typeface designed by Nicole Fally with spacing and mastering by Eben Sorkin (Sorkin Type). It was added to Google Fonts on 2011-05-25 and has not been updated since the initial google/fonts repository commit on 2015-03-07. The upstream repository is `librefonts/limelight`, which contains only legacy source files (SFD/VFB formats) -- not compatible with gftools-builder. No config.yaml exists or can be created for this font.
+Limelight is a display typeface designed by Nicole Fally with spacing and mastering by Eben Sorkin (Sorkin Type). It was added to Google Fonts on 2011-05-25 and has not been updated since the initial google/fonts repository commit on 2015-03-07.
 
 ## METADATA.pb Analysis
 
@@ -16,24 +30,13 @@ The current METADATA.pb at `ofl/limelight/METADATA.pb` contained no source block
 - **Date added**: 2011-05-25
 - **Source block**: None
 
-## Upstream Repository
+## Upstream Repository (librefonts archive)
 
 **Repository**: [librefonts/limelight](https://github.com/librefonts/limelight)
 
 The `librefonts` organization was created on 2013-10-20 by Google Fonts team members (davelab6, felipesanches, pathumego) to decompose the monolithic google/fonts repository into individual per-font source repositories. The Limelight repo was created on 2014-07-16 by Mikhail Kashkin (hash3g) with the commit message "Move limelight font files to separate repository."
 
 The repository is not archived and not a fork. It has 12 commits total, all from 2014, primarily updating Travis CI configuration.
-
-### Source Files
-
-The repository contained only legacy format source files:
-- `src/Limelight-Regular-TTF.sfd` (FontForge SFD)
-- `src/Limelight-Regular-OTF.sfd` (FontForge SFD)
-- `src/Limelight-Regular.vfb` (FontLab VFB)
-
-Additionally, the repo contained decomposed TTX table dumps for both TTF and OTF versions.
-
-**No gftools-builder compatible sources** (`.glyphs`, `.ufo`, `.designspace`) were found. No `config.yaml` existed in the repository.
 
 ### Commit History
 
@@ -73,26 +76,16 @@ The FONTLOG indicated version 1.002, dated April 2012, with mastering by Eben So
 - **PR #6031** (merged 2023-06-07): Removed a useless line in Sorkin description.
 - No PRs existed for source metadata or font binary updates.
 
-## config.yaml Assessment
+## Build Configuration
 
 An override config.yaml **cannot** be created because:
 - The upstream sources are in SFD (FontForge) and VFB (FontLab) formats only.
 - These formats are not supported by gftools-builder, which requires `.glyphs`, `.ufo`, or `.designspace` sources.
 - No modern source files exist in any known repository.
 
-## Recommendation
+## Conclusion
 
-A source block can be added to METADATA.pb pointing to `librefonts/limelight` at commit `f361773`, but without a `config_yaml` field since no gftools-builder compatible sources exist. The source block would document the upstream repository for reference purposes.
-
-```
-source {
-  repository_url: "https://github.com/librefonts/limelight"
-  commit: "f361773b306c507e22a46d18d5e661a6dac84894"
-}
-```
-
-## Status
-
-- **Status**: no_config (SFD-only sources)
+- **Repository URL**: `https://github.com/librefonts/limelight`
+- **Commit**: `f361773b306c507e22a46d18d5e661a6dac84894`
+- **Config**: None (SFD/VFB-only sources, not gftools-builder compatible)
 - **Confidence**: HIGH
-- **Config**: none (SFD-only sources)
