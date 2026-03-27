@@ -1,7 +1,7 @@
 name: "BJ Cree"
 designer: "SIL International"
 license: "OFL"
-category: "SANS_SERIF"
+category: "SERIF"
 date_added: "2026-03-26"
 fonts {
   name: "BJ Cree"
