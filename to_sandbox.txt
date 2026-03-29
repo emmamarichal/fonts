@@ -5,11 +5,11 @@ ofl/sairastencil # https://github.com/google/fonts/pull/10366
 
 # Upgrade
 ofl/coustard # https://github.com/google/fonts/pull/10367
-‎ofl/zalandosanssemiexpanded # https://github.com/google/fonts/pull/10344
+ofl/zalandosanssemiexpanded # https://github.com/google/fonts/pull/10344
 ofl/zalandosansexpanded # https://github.com/google/fonts/pull/10343
 ofl/zalandosans # https://github.com/google/fonts/pull/10342
 ofl/grenze # https://github.com/google/fonts/pull/10365
-‎ofl/mingzat # https://github.com/google/fonts/pull/10329
+ofl/mingzat # https://github.com/google/fonts/pull/10329
 
 # Designer profile
 catalog/designers/renebieder # https://github.com/google/fonts/pull/10382
