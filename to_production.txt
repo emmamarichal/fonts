@@ -1,7 +1,16 @@
-# Designer profile
-catalog/designers/butko # https://github.com/google/fonts/pull/10314
-catalog/designers/ishtarvanlooy # https://github.com/google/fonts/pull/10071
-catalog/designers/maxthunberg # https://github.com/google/fonts/pull/10117
+# New
+ofl/bjcree # https://github.com/google/fonts/pull/10383
+ofl/mirandasans # https://github.com/google/fonts/pull/10211
+ofl/sairastencil # https://github.com/google/fonts/pull/10366
 
-# Metadata / Description / License
-ofl/allkin # https://github.com/google/fonts/pull/10252
+# Upgrade
+ofl/coustard # https://github.com/google/fonts/pull/10367
+ofl/grenze # https://github.com/google/fonts/pull/10365
+ofl/mingzat # https://github.com/google/fonts/pull/10329
+ofl/zalandosans # https://github.com/google/fonts/pull/10342
+ofl/zalandosansexpanded # https://github.com/google/fonts/pull/10343
+ofl/zalandosanssemiexpanded # https://github.com/google/fonts/pull/10344
+
+# Designer profile
+catalog/designers/maxthunberg # https://github.com/google/fonts/pull/10117
+catalog/designers/renebieder # https://github.com/google/fonts/pull/10382
